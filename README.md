@@ -20,3 +20,9 @@ The world builder: Praveen
 The systems engineer: Sanojan
 The core developer: Thisanth
 The agent controller: Me
+
+## Notes
+
+There will be several levels that the player will have to progress through.
+
+Each level will be more difficult to pass than the previous, and the agents will get better and better at following the player as the they level up.
