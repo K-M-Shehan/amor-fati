@@ -21,3 +21,4 @@ func _physics_process(delta):
 
 	if global_position.distance_to(target) < 0.3:
 		path.pop_front()
+	

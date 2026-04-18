@@ -12,6 +12,9 @@ func _ready():
 
 	var path = astar.find_path(0, 4)
 
-	enemy.set_path(path, builder.graph)
-	
-	print("PATH:", path)
+	if path.size() > 0:
+		print("PATH:", path)
+		print("START POS:", builder.graph.nodes[path[0]])
+		enemy.set_path(path, builder.graph)
+	else:
+		print("No path found!")
