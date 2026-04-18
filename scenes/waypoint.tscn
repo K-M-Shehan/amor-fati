@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cc7sj0nq1ldvc"]
+
+[ext_resource type="Script" uid="uid://befpx554iqj4" path="res://scripts/waypoint.gd" id="1_omn23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hlp4"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_omn23"]
+material = SubResource("StandardMaterial3D_8hlp4")
+
+[node name="Waypoint" type="Node3D" unique_id=436533689]
+script = ExtResource("1_omn23")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1197988300]
+mesh = SubResource("SphereMesh_omn23")

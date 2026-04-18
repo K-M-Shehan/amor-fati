@@ -1,0 +1,27 @@
+extends Node
+
+@export var connection_distance := 15.0
+
+var graph = Graph.new()
+
+func _ready():
+	build_graph()
+
+func build_graph():
+	var waypoints = get_tree().get_nodes_in_group("waypoints")
+
+	# add nodes
+	for w in waypoints:
+		graph.add_node(w.id, w.global_position)
+
+	# connect nodes
+	for a in waypoints:
+		for b in waypoints:
+			if a == b:
+				continue
+
+			if a.global_position.distance_to(b.global_position) < connection_distance:
+				graph.add_edge(a.id, b.id)
+
+	print("Graph built:", graph.nodes)
+	print("EDGES:", graph.edges)
