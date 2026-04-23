@@ -29,15 +29,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 7)
 id = 1
 
 [node name="Waypoint3" parent="." unique_id=51325911 groups=["waypoints"] instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 15)
 id = 2
 
 [node name="Waypoint4" parent="." unique_id=1033382137 groups=["waypoints"] instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, 14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 18)
 id = 3
 
 [node name="Waypoint5" parent="." unique_id=1733780925 groups=["waypoints"] instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, 23)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 26)
 id = 4
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=983044736]

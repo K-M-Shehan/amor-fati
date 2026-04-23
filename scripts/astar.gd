@@ -35,7 +35,14 @@ func find_path(start: int, goal: int) -> Array:
 		open.erase(current)
 
 		for neighbor in graph.edges[current]:
-			var tentative = g_score[current] + graph.nodes[current].distance_to(graph.nodes[neighbor])
+			var base_distance = graph.nodes[current].distance_to(graph.nodes[neighbor])
+			var terrain_cost = get_cost(graph.types[neighbor])
+
+			# skip spikes completely
+			if terrain_cost == INF:
+				continue
+
+			var tentative = g_score[current] + base_distance * terrain_cost
 
 			if tentative < g_score[neighbor]:
 				came_from[neighbor] = current
@@ -55,3 +62,15 @@ func reconstruct(came_from, current):
 		path.insert(0, current)
 
 	return path
+
+func get_cost(tile_type):
+	match tile_type:
+		Waypoint.TileType.NORMAL:
+			return 1.0
+		Waypoint.TileType.MUD:
+			return 3.0
+		Waypoint.TileType.WATER:
+			return 2.0
+		Waypoint.TileType.SPIKE:
+			return INF
+	return 1.0

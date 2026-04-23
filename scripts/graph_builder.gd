@@ -12,7 +12,7 @@ func build_graph():
 
 	# add nodes
 	for w in waypoints:
-		graph.add_node(w.id, w.global_position)
+		graph.add_node(w.id, w.global_position, w.tile_type)
 
 	# connect nodes
 	for a in waypoints:
