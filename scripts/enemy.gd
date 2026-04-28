@@ -7,7 +7,7 @@ func set_path(p: Array, graph: Graph):
 	path.clear()
 
 	for id in p:
-		path.append(graph.nodes[id])
+		path.append(graph.nodes[id].position)
 
 func _physics_process(delta):
 	if path.size() == 0:

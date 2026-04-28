@@ -20,7 +20,7 @@ func find_path(start: int, goal: int) -> Array:
 		f_score[id] = INF
 
 	g_score[start] = 0
-	f_score[start] = heuristic(graph.nodes[start], graph.nodes[goal])
+	f_score[start] = heuristic(graph.nodes[start].position, graph.nodes[goal].position)
 
 	while open.size() > 0:
 		var current = open[0]
@@ -34,20 +34,20 @@ func find_path(start: int, goal: int) -> Array:
 
 		open.erase(current)
 
-		for neighbor in graph.edges[current]:
-			var base_distance = graph.nodes[current].distance_to(graph.nodes[neighbor])
-			var terrain_cost = get_cost(graph.types[neighbor])
+		for neighbor in graph.nodes[current].neighbors:
+			var base_distance = graph.nodes[current].position.distance_to(graph.nodes[neighbor].position)
 
-			# skip spikes completely
-			if terrain_cost == INF:
+			if graph.nodes[neighbor].blocked:
 				continue
+
+			var terrain_cost = graph.nodes[neighbor].terrain_cost
 
 			var tentative = g_score[current] + base_distance * terrain_cost
 
 			if tentative < g_score[neighbor]:
 				came_from[neighbor] = current
 				g_score[neighbor] = tentative
-				f_score[neighbor] = tentative + heuristic(graph.nodes[neighbor], graph.nodes[goal])
+				f_score[neighbor] = tentative + heuristic(graph.nodes[neighbor].position, graph.nodes[goal].position)
 
 				if neighbor not in open:
 					open.append(neighbor)

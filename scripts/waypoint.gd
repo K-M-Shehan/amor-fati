@@ -11,3 +11,4 @@ enum TileType {
 }
 
 @export var tile_type: TileType = TileType.NORMAL
+@export var movement_penalty: float = 1.0

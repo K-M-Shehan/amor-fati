@@ -14,7 +14,7 @@ func _ready():
 
 	if path.size() > 0:
 		print("PATH:", path)
-		print("START POS:", builder.graph.nodes[path[0]])
+		print("START POS:", builder.graph.nodes[path[0]].position)
 		enemy.set_path(path, builder.graph)
 	else:
 		print("No path found!")

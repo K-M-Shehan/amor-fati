@@ -12,7 +12,7 @@ func build_graph():
 
 	# add nodes
 	for w in waypoints:
-		graph.add_node(w.id, w.global_position, w.tile_type)
+		graph.add_node(w.id, w.global_position, w.movement_penalty, w.tile_type)
 
 	# connect nodes
 	for a in waypoints:
@@ -23,5 +23,14 @@ func build_graph():
 			if a.global_position.distance_to(b.global_position) < connection_distance:
 				graph.add_edge(a.id, b.id)
 
-	print("Graph built:", graph.nodes)
-	print("EDGES:", graph.edges)
+	print("Graph built:")
+	for id in graph.nodes:
+		var n = graph.nodes[id]
+		print(
+			id,
+			" pos=", n.position,
+			" cost=", n.terrain_cost,
+			" neighbors=", n.neighbors
+		)
+	for id in graph.nodes:
+		print(id, " -> ", graph.nodes[id].neighbors)

@@ -1,16 +1,22 @@
 class_name Graph
 
-var nodes = {}  # id -> Vector3
-var edges = {}  # id -> Array[int] neighbors
-var types = {}  # id -> tile_type
+var nodes = {}
 
-func add_node(id: int, pos: Vector3, tile_type):
-	nodes[id] = pos
-	edges[id] = []
-	types[id] = tile_type
+func add_node(id,pos,cost,t_type):
+	var node = PathNode.new()
 
-func add_edge(a: int, b: int):
-	if b not in edges[a]:
-		edges[a].append(b)
-	if a not in edges[b]:
-		edges[b].append(a)
+	node.id=id
+	node.position=pos
+	node.terrain_cost=cost
+	node.terrain_type=t_type
+
+	nodes[id]=node
+
+
+func add_edge(a,b):
+
+	if b not in nodes[a].neighbors:
+		nodes[a].neighbors.append(b)
+
+	if a not in nodes[b].neighbors:
+		nodes[b].neighbors.append(a)
