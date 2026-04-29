@@ -18,3 +18,19 @@ func _ready():
 		enemy.set_path(path, builder.graph)
 	else:
 		print("No path found!")
+
+func recalculate_enemy_path():
+	var path = astar.find_path(0,4)
+
+	print("NEW PATH:", path)
+
+	enemy.set_path(path, builder.graph)
+
+func _input(event):
+
+	if event.is_action_pressed("ui_accept"):
+		print("Barricade dropped!")
+
+		builder.graph.remove_edge(1,3)
+
+		recalculate_enemy_path()
