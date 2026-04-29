@@ -36,7 +36,7 @@ func recalculate_enemy_path():
 
 func _input(event):
 
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("barricade"):
 		print("Barricade dropped!")
 
 		builder.graph.remove_edge(1,3)

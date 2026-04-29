@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnqnko7grdnqi"]
 
-[ext_resource type="Script" uid="uid://bmtp54g3bvqdt" path="res://scripts/main.gd" id="1_bfxgj"]
+[ext_resource type="Script" uid="uid://bmtp54g3bvqdt" path="res://scripts/level1.gd" id="1_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="2_dywbp"]
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="4_2r1tl"]
@@ -16,6 +16,7 @@ script = ExtResource("1_bfxgj")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1278152255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13916016, -0.04449463, -81.04541)
+use_collision = true
 size = Vector3(130, 1.0889893, 218)
 material = SubResource("StandardMaterial3D_sgp6g")
 
@@ -44,4 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 26)
 id = 4
 
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("5_dywbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.41608894, 24)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
+transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, 13.662323)
