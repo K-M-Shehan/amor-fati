@@ -4,13 +4,21 @@ extends Node3D
 @onready var enemy = $Enemy
 
 var astar
+var bfs
 
 func _ready():
 	await get_tree().process_frame
 
 	astar = AStarCustom.new(builder.graph)
+	
+	bfs = BFS.new(builder.graph)
 
 	var path = astar.find_path(0, 4)
+	
+	var bfs_path = bfs.find_path(0, 4)
+
+	print("A* PATH:", path)
+	print("BFS PATH:", bfs_path)
 
 	if path.size() > 0:
 		print("PATH:", path)
