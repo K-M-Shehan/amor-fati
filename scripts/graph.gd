@@ -20,3 +20,11 @@ func add_edge(a,b):
 
 	if a not in nodes[b].neighbors:
 		nodes[b].neighbors.append(a)
+
+func remove_edge(a,b):
+
+	if b in nodes[a].neighbors:
+		nodes[a].neighbors.erase(b)
+
+	if a in nodes[b].neighbors:
+		nodes[b].neighbors.erase(a)
