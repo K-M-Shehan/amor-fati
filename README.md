@@ -14,12 +14,19 @@ Blender will be used for any 3d modeling done for the game.
 
 ## Group Roles
 
-This assignment requires 4 members to work as a team to produce the resultant game and all the members must have equal contribution.
+The assignments requires 4 members to work as a team to produce the resultant game and all the members must have equal contribution.
 
-The world builder: Praveen
-The systems engineer: Sanojan
-The core developer: Thisanth
-The agent controller: Me
+For GV:
+- The world builder: Praveen
+- The systems engineer: Sanojan
+- The core developer: Thisanth
+- The agent controller: Me
+
+For IS:
+- Graph formulation: Sanojan
+- Dynamic adaptation: Thisanth
+- A* heuristic search: Me
+- Secondary search (BFS): Praveen
 
 ## Notes
 
