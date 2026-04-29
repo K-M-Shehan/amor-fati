@@ -23,7 +23,7 @@ func _physics_process(delta):
 	const SPEED = 5.5
 	
 	var input_direction_2D = Input.get_vector(
-		"move_left", "move_right", "move-forward", "move_back"
+		"move_left", "move_right", "move_forward", "move_back"
 	)
 	
 	var input_direction_3D = Vector3(
@@ -34,3 +34,5 @@ func _physics_process(delta):
 	
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
+	
+	move_and_slide()

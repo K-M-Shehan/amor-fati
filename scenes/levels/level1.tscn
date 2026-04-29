@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cnqnko7grdnqi"]
+
+[ext_resource type="Script" uid="uid://bmtp54g3bvqdt" path="res://scripts/main.gd" id="1_bfxgj"]
+[ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="2_dywbp"]
+[ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="3_1seuy"]
+[ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="4_2r1tl"]
+[ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="5_dywbp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgp6g"]
+albedo_color = Color(0.03529412, 0.56078434, 0.011764706, 1)
+
+[node name="Level1" type="Node3D" unique_id=517257717]
+script = ExtResource("1_bfxgj")
+
+[node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1278152255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13916016, -0.04449463, -81.04541)
+size = Vector3(130, 1.0889893, 218)
+material = SubResource("StandardMaterial3D_sgp6g")
+
+[node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("3_1seuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0039877, 0)
+
+[node name="Waypoint" parent="." unique_id=436533689 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 7)
+
+[node name="Waypoint2" parent="." unique_id=2137193747 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 7)
+id = 1
+
+[node name="Waypoint3" parent="." unique_id=51325911 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 15)
+id = 2
+tile_type = 1
+movement_penalty = 10.0
+
+[node name="Waypoint4" parent="." unique_id=1033382137 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 18)
+id = 3
+
+[node name="Waypoint5" parent="." unique_id=1733780925 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 26)
+id = 4
+
+[node name="Player" parent="." unique_id=1911212463 instance=ExtResource("5_dywbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 24)
