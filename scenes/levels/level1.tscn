@@ -9,6 +9,12 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgp6g"]
 albedo_color = Color(0.03529412, 0.56078434, 0.011764706, 1)
 
+[sub_resource type="Environment" id="Environment_dywbp"]
+background_mode = 1
+background_color = Color(0.31755474, 0.77655405, 0.98390216, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.72741115, 0.4410394, 0.23817572, 1)
+
 [node name="Level1" type="Node3D" unique_id=517257717]
 script = ExtResource("1_bfxgj")
 
@@ -49,3 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.41608894, 24)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, 13.662323)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
+environment = SubResource("Environment_dywbp")
