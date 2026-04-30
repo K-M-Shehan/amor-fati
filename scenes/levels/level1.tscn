@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="5_dywbp"]
+[ext_resource type="PackedScene" uid="uid://6uqu0s71wj2t" path="res://scenes/props/spike.tscn" id="6_1seuy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgp6g"]
 albedo_color = Color(0.03529412, 0.56078434, 0.011764706, 1)
@@ -63,3 +64,15 @@ transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.7201
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
 environment = SubResource("Environment_dywbp")
+
+[node name="Spike" parent="." unique_id=195264075 instance=ExtResource("6_1seuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0023613, 0.73711616, 20.43721)
+
+[node name="Spike2" parent="." unique_id=2072201879 instance=ExtResource("6_1seuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.616255, 0.73711616, 12.946991)
+
+[node name="Spike3" parent="." unique_id=1175441589 instance=ExtResource("6_1seuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, 13.336831)
+
+[node name="Spike4" parent="." unique_id=1684893009 instance=ExtResource("6_1seuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, 5.663437)
