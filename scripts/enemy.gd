@@ -9,7 +9,7 @@ func set_path(p: Array, graph: Graph):
 	for id in p:
 		path.append(graph.nodes[id].position)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if path.size() == 0:
 		return
 
@@ -22,3 +22,5 @@ func _physics_process(delta):
 	if global_position.distance_to(target) < 0.3:
 		path.pop_front()
 	
+	if global_position.distance_to(get_parent().get_node("Player").global_position) < 1.0:
+		get_parent().get_node("Player").die()

@@ -36,28 +36,82 @@ material = SubResource("StandardMaterial3D_sgp6g")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0039877, 0)
 
 [node name="Waypoint" parent="." unique_id=436533689 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.08239, 1, 26.339413)
+
+[node name="Waypoint11" parent="." unique_id=14972918 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, 26.339413)
+id = 10
+
+[node name="Waypoint12" parent="." unique_id=1306283300 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.710869, 1, 26.339413)
+id = 11
 
 [node name="Waypoint2" parent="." unique_id=2137193747 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076374054, 1, 26.795319)
 id = 1
 
 [node name="Waypoint3" parent="." unique_id=51325911 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 14.917091)
 id = 2
 tile_type = 1
 movement_penalty = 10.0
 
+[node name="Waypoint6" parent="." unique_id=515233649 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.619953, 1, 14.917091)
+id = 5
+tile_type = 1
+movement_penalty = 10.0
+
+[node name="Waypoint7" parent="." unique_id=194168914 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 7.5525913)
+id = 6
+tile_type = 1
+movement_penalty = 10.0
+
+[node name="Waypoint8" parent="." unique_id=80574881 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.660769, 1, 7.3635674)
+id = 7
+tile_type = 1
+movement_penalty = 10.0
+
 [node name="Waypoint4" parent="." unique_id=1033382137 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.025784, 1, 27.01812)
 id = 3
 
 [node name="Waypoint5" parent="." unique_id=1733780925 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.241673, 1, -55.061012)
 id = 4
 
+[node name="Waypoint9" parent="." unique_id=305292517 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.812927, 1, -55.061012)
+id = 8
+
+[node name="Waypoint10" parent="." unique_id=1836176459 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.00511, 1, -55.061012)
+id = 9
+
+[node name="Waypoint13" parent="." unique_id=877908517 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.00511, 1, -10.139862)
+id = 12
+
+[node name="Waypoint14" parent="." unique_id=753159241 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.44292, 1, -10.139862)
+id = 13
+
+[node name="Waypoint15" parent="." unique_id=1783525444 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12626648, 1, -10.139862)
+id = 14
+
+[node name="Waypoint16" parent="." unique_id=446575616 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.934519, 1, -10.139862)
+id = 15
+
+[node name="Waypoint17" parent="." unique_id=1273433050 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.57415, 1, -10.139862)
+id = 16
+
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("5_dywbp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.41608894, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28355408, 0.41608894, 24)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, 13.662323)
@@ -69,7 +123,7 @@ environment = SubResource("Environment_dywbp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0023613, 0.73711616, 20.43721)
 
 [node name="Spike2" parent="." unique_id=2072201879 instance=ExtResource("6_1seuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.616255, 0.73711616, 12.946991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.13655, 0.73711616, 12.946991)
 
 [node name="Spike3" parent="." unique_id=1175441589 instance=ExtResource("6_1seuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, 13.336831)

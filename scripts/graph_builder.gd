@@ -1,6 +1,6 @@
 extends Node
 
-@export var connection_distance := 15.0
+@export var connection_distance := 40.0
 
 var graph = Graph.new()
 
