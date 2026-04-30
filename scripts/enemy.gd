@@ -8,6 +8,10 @@ func _ready():
 	player = get_parent().get_node("Player")
 
 func set_path(p: Array, graph: Graph):
+	# only update if new path is different
+	if p.size() == 0:
+		return
+
 	path.clear()
 
 	for id in p:
@@ -17,10 +21,8 @@ func _physics_process(_delta):
 
 	var target
 
-	if path.size() > 1:
+	if path.size() > 0:
 		target = path[0]
-	elif path.size() == 1:
-		target = player.global_position
 	else:
 		target = player.global_position
 

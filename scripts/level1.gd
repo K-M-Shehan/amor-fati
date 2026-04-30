@@ -58,10 +58,13 @@ func get_closest_node_id(pos: Vector3) -> int:
 	return closest_id
 
 var timer := 0.0
+var last_player_pos = Vector3.ZERO
 
 func _physics_process(delta):
 	timer += delta
 
 	if timer > 0.5: # recalc every half second
 		timer = 0
-		recalculate_path()
+		if player.global_position.distance_to(last_player_pos) > 2.0:
+			recalculate_path()
+			last_player_pos = player.global_position
