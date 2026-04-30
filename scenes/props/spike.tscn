@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://6uqu0s71wj2t"]
+
+[ext_resource type="Script" uid="uid://dl1l10kyqlhq1" path="res://scripts/props/spike.gd" id="1_oewwg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dbla"]
+size = Vector3(1, 0.4711914, 0.7456665)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oewwg"]
+albedo_color = Color(0.9327654, 0, 0.039591394, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_pyvgv"]
+material = SubResource("StandardMaterial3D_oewwg")
+
+[node name="Spike" type="Area3D" unique_id=195264075]
+script = ExtResource("1_oewwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1372949190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00024414063, 0.0042419434)
+shape = SubResource("BoxShape3D_8dbla")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1660394798]
+transform = Transform3D(-3.2637118e-08, 0, -1, 0, 0.47423232, 0, 0.7466502, 0, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_pyvgv")
