@@ -42,3 +42,7 @@ func _physics_process(delta):
 		velocity.y = 7
 		
 	move_and_slide()
+	
+func die():
+	print("Player died!")
+	get_tree().reload_current_scene()

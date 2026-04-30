@@ -5,6 +5,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		print("Player hit spikes!")
-
-		get_tree().reload_current_scene()
+		body.die()
