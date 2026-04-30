@@ -22,7 +22,7 @@ func _physics_process(_delta):
 	var target
 
 	# if close enough to player → chase directly
-	if global_position.distance_to(player.global_position) < 20.0:
+	if global_position.distance_to(player.global_position) < 15.0:
 		target = player.global_position
 
 	# otherwise follow graph
