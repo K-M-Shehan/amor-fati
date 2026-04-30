@@ -16,9 +16,12 @@ func _ready():
 func recalculate_path():
 
 	var enemy_node = get_closest_node_id(enemy.global_position)
+	# find closest node to player ONLY as a graph target
 	var player_node = get_closest_node_id(player.global_position)
 
 	var path = astar.find_path(enemy_node, player_node)
+
+	# IMPORTANT: don't include final node as strict target
 
 	print("CHASE PATH:", path)
 
@@ -63,7 +66,7 @@ var last_player_pos = Vector3.ZERO
 func _physics_process(delta):
 	timer += delta
 
-	if timer > 0.5: # recalc every half second
+	if timer > 1.0: # recalc every second
 		timer = 0
 		if player.global_position.distance_to(last_player_pos) > 2.0:
 			recalculate_path()
