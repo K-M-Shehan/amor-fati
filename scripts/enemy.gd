@@ -2,6 +2,10 @@ extends CharacterBody3D
 
 var path = []
 var speed = 3.0
+var player
+
+func _ready():
+	player = get_parent().get_node("Player")
 
 func set_path(p: Array, graph: Graph):
 	path.clear()
@@ -10,17 +14,25 @@ func set_path(p: Array, graph: Graph):
 		path.append(graph.nodes[id].position)
 
 func _physics_process(_delta):
-	if path.size() == 0:
-		return
 
-	var target = path[0]
+	var target
+
+	if path.size() > 1:
+		target = path[0]
+	elif path.size() == 1:
+		target = player.global_position
+	else:
+		target = player.global_position
+
 	var dir = (target - global_position).normalized()
 
 	velocity = dir * speed
 	move_and_slide()
 
-	if global_position.distance_to(target) < 0.3:
+	# move along path
+	if path.size() > 0 and global_position.distance_to(path[0]) < 0.3:
 		path.pop_front()
-	
-	if global_position.distance_to(get_parent().get_node("Player").global_position) < 1.0:
-		get_parent().get_node("Player").die()
+
+	# kill player
+	if global_position.distance_to(player.global_position) < 1.0:
+		player.die()

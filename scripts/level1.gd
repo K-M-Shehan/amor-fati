@@ -62,6 +62,6 @@ var timer := 0.0
 func _physics_process(delta):
 	timer += delta
 
-	if timer > 1.0: # recalc every second
+	if timer > 0.5: # recalc every half second
 		timer = 0
 		recalculate_path()
