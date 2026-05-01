@@ -10,6 +10,9 @@ albedo_color = Color(1, 0, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
 material = SubResource("StandardMaterial3D_o5qli")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_4i4j6"]
+radius = 0.7280146
+
 [node name="Enemy" type="CharacterBody3D" unique_id=1058857341]
 script = ExtResource("1_7p1mj")
 
@@ -18,3 +21,8 @@ shape = SubResource("BoxShape3D_sgp6g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=451555398]
 mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="KillZone" type="Area3D" parent="." unique_id=268435805]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone" unique_id=706625814]
+shape = SubResource("SphereShape3D_4i4j6")

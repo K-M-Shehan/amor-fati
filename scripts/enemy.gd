@@ -6,6 +6,7 @@ var player
 
 func _ready():
 	player = get_parent().get_node("Player")
+	$KillZone.body_entered.connect(_on_body_entered)
 
 func set_path(p: Array, graph: Graph):
 	# only update if new path is different
@@ -16,6 +17,11 @@ func set_path(p: Array, graph: Graph):
 
 	for id in p:
 		path.append(graph.nodes[id].position)
+		
+func _on_body_entered(body):
+	if body.name == "Player":
+		print("Player killed (enemy caught)")
+		body.die()
 
 func _physics_process(_delta):
 
@@ -40,7 +46,3 @@ func _physics_process(_delta):
 	# move along path
 	if path.size() > 0 and global_position.distance_to(path[0]) < 0.3:
 		path.pop_front()
-
-	# kill player
-	if global_position.distance_to(player.global_position) < 1.0:
-		player.die()
