@@ -1,6 +1,11 @@
 extends CharacterBody3D
 
 var has_key = false
+@onready var ray = $Camera3D/InteractRay
+@onready var ui_label = $"../CanvasLayer/InteractionLabel"
+
+var keys_collected = 0
+var total_keys = 2
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # removes pointer from game
@@ -45,9 +50,32 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
+	handle_interaction()
+	
 func collect_key():
 	has_key = true
 	print("Key collected!")
+	
+func handle_interaction():
+
+	if ray.is_colliding():
+
+		var collider = ray.get_collider()
+
+		if collider.has_method("interact"):
+
+			var dist = global_position.distance_to(collider.global_position)
+
+			if dist < 2.0:
+				ui_label.text = collider.get_interaction_text()
+				ui_label.visible = true
+
+				if Input.is_action_just_pressed("interact"):
+					collider.interact(self)
+
+				return
+
+	ui_label.visible = false
 	
 func die():
 	print("Player died!")

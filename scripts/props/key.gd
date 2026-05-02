@@ -1,9 +1,8 @@
 extends Area3D
 
-func _ready():
-	body_entered.connect(_on_body_entered)
+func interact(player):
+	player.collect_key()
+	queue_free()
 
-func _on_body_entered(body):
-	if body.name == "Player":
-		body.collect_key()
-		queue_free() # remove key
+func get_interaction_text():
+	return "Pick up key"

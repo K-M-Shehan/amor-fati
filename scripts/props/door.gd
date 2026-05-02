@@ -1,12 +1,15 @@
 extends Area3D
 
-func _ready():
-	body_entered.connect(_on_body_entered)
+func interact(player):
+	if player.has_key:
+		print("Door opened!")
+		open_door()
+	else:
+		print("Door is locked!")
 
-func _on_body_entered(body):
-	if body.name == "Player":
-		if body.has_key:
-			print("Door opened! Level complete!")
-			get_tree().reload_current_scene() # TEMP (we'll change later)
-		else:
-			print("Door is locked!")
+func get_interaction_text():
+	return "Open door"
+
+func open_door():
+	# simple version (will animate later)
+	visible = false
