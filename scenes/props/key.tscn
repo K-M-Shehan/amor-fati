@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bovmm5xwlpydd"]
+
+[ext_resource type="Script" uid="uid://bgsh48ncdboxy" path="res://scripts/props/key.gd" id="1_2c0bv"]
+[ext_resource type="PackedScene" uid="uid://c57nklyp58fp" path="res://assets/props/Key.glb" id="1_68mu8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2c0bv"]
+radius = 1.0361328
+height = 2.0722656
+
+[node name="Key" type="Area3D" unique_id=1009586310]
+script = ExtResource("1_2c0bv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1239485168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16351753, 0, 0)
+shape = SubResource("CapsuleShape3D_2c0bv")
+
+[node name="Root Scene" parent="." unique_id=239361295 instance=ExtResource("1_68mu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62341416, -1.1920929e-07, 0.015275121)

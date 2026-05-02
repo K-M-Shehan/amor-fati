@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+var has_key = false
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # removes pointer from game
 
@@ -42,6 +44,10 @@ func _physics_process(delta):
 		velocity.y = 7
 		
 	move_and_slide()
+	
+func collect_key():
+	has_key = true
+	print("Key collected!")
 	
 func die():
 	print("Player died!")
