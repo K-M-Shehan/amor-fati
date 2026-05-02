@@ -5,6 +5,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5e0ln"]
 radius = 0.8779297
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5e0ln"]
+size = Vector3(1.1331863, 1.7949219, 0.22692871)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xduyq"]
 resource_name = "Door"
 vertex_color_use_as_albedo = true
@@ -168,6 +171,13 @@ shape = SubResource("CapsuleShape3D_5e0ln")
 
 [node name="Hinge" type="Node3D" parent="Door" unique_id=424571329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5406234, 1.0245254, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Door/Hinge" unique_id=178276547]
+transform = Transform3D(1.0494326, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Hinge/CharacterBody3D" unique_id=1217802665]
+transform = Transform3D(0.85853255, 0, 0, 0, 1, 0, 0, 0, 1, -0.48224553, -0.03125, 0.0022583008)
+shape = SubResource("BoxShape3D_5e0ln")
 
 [node name="Door" type="MeshInstance3D" parent="Door/Hinge" unique_id=666231658]
 transform = Transform3D(100, 0, 0, 0, 100.245026, 7.54979e-06, 0, -7.568289e-06, 100, -0.4852356, -0.043110788, -0.016132507)
