@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="5_dywbp"]
 [ext_resource type="PackedScene" uid="uid://6uqu0s71wj2t" path="res://scenes/props/spike.tscn" id="6_1seuy"]
+[ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="7_2r1tl"]
+[ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="8_8a7m2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgp6g"]
 albedo_color = Color(0.03529412, 0.56078434, 0.011764706, 1)
@@ -309,3 +311,12 @@ transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, -64.824326, 9
 use_collision = true
 size = Vector3(1, 17.410156, 1)
 material = SubResource("StandardMaterial3D_1seuy")
+
+[node name="Door" parent="." unique_id=1377055800 instance=ExtResource("7_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4910345, 0.52748716, -188.08478)
+
+[node name="Key" parent="." unique_id=1009586310 instance=ExtResource("8_8a7m2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.36637, 0.99176514, -6.6804466)
+
+[node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("8_8a7m2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.898893, 0.99176466, -2.32065)

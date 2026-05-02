@@ -1,15 +1,14 @@
 extends Area3D
 
 func interact(player):
-	if player.has_key:
-		print("Door opened!")
+	if player.keys_collected >= player.total_keys:
 		open_door()
 	else:
-		print("Door is locked!")
+		print("Need more keys!")
 
 func get_interaction_text():
 	return "Open door"
 
 func open_door():
-	# simple version (will animate later)
-	visible = false
+	var tween = create_tween()
+	tween.tween_property($Door/Door, "rotation_degrees:y", 90, 1.0)

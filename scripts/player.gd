@@ -2,7 +2,11 @@ extends CharacterBody3D
 
 var has_key = false
 @onready var ray = $Camera3D/InteractRay
-@onready var ui_label = $"../CanvasLayer/InteractionLabel"
+@onready var ui_label = $"CanvasLayer/InteractionLabel"
+@onready var key_ui = $"CanvasLayer/KeyCounter"
+
+func update_ui():
+	key_ui.text = "Keys: %d/%d" % [keys_collected, total_keys]
 
 var keys_collected = 0
 var total_keys = 2
@@ -53,25 +57,47 @@ func _physics_process(delta):
 	handle_interaction()
 	
 func collect_key():
-	has_key = true
-	print("Key collected!")
+	keys_collected += 1
+	has_key = keys_collected >= total_keys
+
+	update_ui()
 	
 func handle_interaction():
 
 	if ray.is_colliding():
 
 		var collider = ray.get_collider()
+		
+		# godot helper
+		if not is_instance_valid(collider):
+			return
+
+		# FIX: check null
+		if collider == null:
+			ui_label.visible = false
+			return
+
+		# fix: handle mesh hits
+		if not collider.has_method("interact") and collider.get_parent():
+			collider = collider.get_parent()
+
+		# FIX again after reassignment
+		if collider == null:
+			ui_label.visible = false
+			return
 
 		if collider.has_method("interact"):
 
 			var dist = global_position.distance_to(collider.global_position)
 
-			if dist < 2.0:
+			if dist < 2.5:
 				ui_label.text = collider.get_interaction_text()
 				ui_label.visible = true
 
 				if Input.is_action_just_pressed("interact"):
 					collider.interact(self)
+					ui_label.visible = false
+					return
 
 				return
 
