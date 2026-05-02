@@ -11,4 +11,4 @@ func get_interaction_text():
 
 func open_door():
 	var tween = create_tween()
-	tween.tween_property($Door/Door, "rotation_degrees:y", 90, 1.0)
+	tween.tween_property($Door/Hinge, "rotation_degrees:y", -90, 1.0)
