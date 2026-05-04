@@ -17,10 +17,10 @@ Blender will be used for any 3d modeling done for the game.
 The assignments requires 4 members to work as a team to produce the resultant game and all the members must have equal contribution.
 
 For GV:
-- The world builder: Praveen
+- The world builder: Me
 - The systems engineer: Sanojan
 - The core developer: Thisanth
-- The agent controller: Me
+- The agent controller: Praveen
 
 For IS:
 - Graph formulation: Sanojan
