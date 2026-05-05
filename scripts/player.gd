@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var has_key = false
+var is_dead = false
 @onready var ray = $Camera3D/InteractRay
 @onready var ui_label = $"CanvasLayer/InteractionLabel"
 @onready var key_ui = $"CanvasLayer/KeyCounter"
@@ -102,7 +103,15 @@ func handle_interaction():
 				return
 
 	ui_label.visible = false
-	
-func die():
-	print("Player died!")
+
+
+func _reload_scene():
 	get_tree().reload_current_scene()
+		
+func die():
+	if is_dead:
+		return
+	is_dead = true
+
+	print("Player died!")
+	call_deferred("_reload_scene")
