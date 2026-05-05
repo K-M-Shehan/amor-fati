@@ -3,6 +3,7 @@ extends CharacterBody3D
 var path = []
 var speed = 3.0
 var player
+var rotation_speed = 5.0
 
 func _ready():
 	player = get_parent().get_node("Player")
@@ -39,6 +40,11 @@ func _physics_process(_delta):
 		target = player.global_position
 
 	var dir = (target - global_position).normalized()
+	
+	# rotation
+	if dir.length() > 0.01:
+		var target_angle = atan2(dir.x, dir.z)
+		rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * _delta)
 
 	velocity = dir * speed
 	move_and_slide()

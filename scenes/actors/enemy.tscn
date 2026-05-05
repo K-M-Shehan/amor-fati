@@ -474,7 +474,7 @@ shadow_mesh = SubResource("ArrayMesh_fih30")
 size = Vector3(1.3227539, 3.4316406, 3.4365234)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4i4j6"]
-radius = 1.5708008
+radius = 1.9243164
 height = 4.0200195
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1058857341]
@@ -538,5 +538,5 @@ shape = SubResource("BoxShape3D_sgp6g")
 [node name="KillZone" type="Area3D" parent="." unique_id=268435805]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone" unique_id=125729398]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7513164, 1.0100098, 0.63400424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7037624, 1.0100098, 0.51496994)
 shape = SubResource("CapsuleShape3D_4i4j6")
