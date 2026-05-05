@@ -38,7 +38,10 @@ size = Vector3(130, 1.0889893, 218)
 material = SubResource("StandardMaterial3D_sgp6g")
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("3_1seuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0039877, -126.751625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.59037, 1.0039877, -141.87094)
+
+[node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("3_1seuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
 
 [node name="Waypoint" parent="." unique_id=436533689 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.08239, 1, -85.0531)
