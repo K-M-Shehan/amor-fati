@@ -9,10 +9,22 @@
 [ext_resource type="PackedScene" uid="uid://6uqu0s71wj2t" path="res://scenes/props/spike.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="7_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="8_8a7m2"]
+[ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="8_nkeig"]
+[ext_resource type="PackedScene" uid="uid://bteajsp8nw5cf" path="res://scenes/environment/castle_ruin.tscn" id="10_5ntmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_plydf")
 uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkeig"]
+albedo_texture = ExtResource("8_nkeig")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfihu"]
+albedo_texture = ExtResource("8_nkeig")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1
@@ -25,9 +37,6 @@ fog_density = 0.0055
 fog_height = 0.5
 fog_height_density = 0.15
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1seuy"]
-albedo_color = Color(0.19215687, 0.19607843, 1, 1)
-
 [node name="Level1" type="Node3D" unique_id=517257717]
 script = ExtResource("1_bfxgj")
 
@@ -38,6 +47,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13916016, -0.04449463, -81
 use_collision = true
 size = Vector3(130, 1.0889893, 218)
 material = SubResource("StandardMaterial3D_5ntmo")
+
+[node name="SideWallLeft" type="CSGBox3D" parent="Map" unique_id=1372538553]
+transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, -64.824326, 9.778316, -84.405945)
+use_collision = true
+size = Vector3(1, 17.410156, 1)
+material = SubResource("StandardMaterial3D_nkeig")
+
+[node name="SideWallRight" type="CSGBox3D" parent="Map" unique_id=1773748055]
+transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, 65.36864, 9.778316, -84.405945)
+use_collision = true
+size = Vector3(1, 17.410156, 1)
+material = SubResource("StandardMaterial3D_nfihu")
 
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
 
@@ -307,18 +328,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, -98.055
 [node name="Spike4" parent="." unique_id=1684893009 instance=ExtResource("6_1seuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.72907)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1773748055]
-transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, 65.36864, 9.778316, -84.405945)
-use_collision = true
-size = Vector3(1, 17.410156, 1)
-material = SubResource("StandardMaterial3D_1seuy")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1372538553]
-transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, -64.824326, 9.778316, -84.405945)
-use_collision = true
-size = Vector3(1, 17.410156, 1)
-material = SubResource("StandardMaterial3D_1seuy")
-
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("7_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4910345, 0.52748716, -188.08478)
 
@@ -327,3 +336,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.36637, 0.99176514, -118.0
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("8_8a7m2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.898893, 0.99176466, -113.71316)
+
+[node name="castle_ruin" parent="." unique_id=195644744 instance=ExtResource("10_5ntmo")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.13902034, -0.6812897, -35.836353)
