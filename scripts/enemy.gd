@@ -46,9 +46,21 @@ func _physics_process(_delta):
 	#	target = player.global_position
 
 	# otherwise follow graph
-	if path.size() > 0:
-		target = path[0]
+	var next_node = null
 
+	if path.size() > 0:
+		next_node = path[0]
+
+	# choose smarter target
+	if next_node != null:
+		var dist_to_node = global_position.distance_to(next_node)
+		var dist_to_player = global_position.distance_to(player.global_position)
+
+		# if player is closer than next node → ignore graph
+		if dist_to_player < dist_to_node:
+			target = player.global_position
+		else:
+			target = next_node
 	else:
 		target = player.global_position
 
