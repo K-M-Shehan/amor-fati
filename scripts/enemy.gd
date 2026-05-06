@@ -6,6 +6,7 @@ var player
 var rotation_speed = 5.0
 
 func _ready():
+	add_to_group("enemies")
 	player = get_parent().get_node("Player")
 	$KillZone.body_entered.connect(_on_body_entered)
 
@@ -29,11 +30,11 @@ func _physics_process(_delta):
 	var target
 
 	# if close enough to player → chase directly
-	if global_position.distance_to(player.global_position) < 15.0:
-		target = player.global_position
+	# if global_position.distance_to(player.global_position) < 2.0:
+	#	target = player.global_position
 
 	# otherwise follow graph
-	elif path.size() > 0:
+	if path.size() > 0:
 		target = path[0]
 
 	else:

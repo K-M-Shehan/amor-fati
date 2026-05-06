@@ -10,23 +10,25 @@ var bfs
 func _ready():
 	await get_tree().process_frame
 
+	builder.build_graph()
+
 	astar = AStarCustom.new(builder.graph)
 	bfs = BFS.new(builder.graph)
 	
 func recalculate_path():
 
-	var enemy_node = get_closest_node_id(enemy.global_position)
-	# find closest node to player ONLY as a graph target
-	var player_node = get_closest_node_id(player.global_position)
+	for e in get_tree().get_nodes_in_group("enemies"):
+		var enemy_node = get_closest_node_id(e.global_position)
+		var player_node = get_closest_node_id(player.global_position)
+		
+		if enemy_node == -1 or player_node == -1:
+			continue
+			
+		var path = astar.find_path(enemy_node, player_node)
+		if path.size() > 0:
+			e.set_path(path, builder.graph)
+		print("CHASE PATH:", path)
 
-	var path = astar.find_path(enemy_node, player_node)
-
-	# IMPORTANT: don't include final node as strict target
-
-	print("CHASE PATH:", path)
-
-	if path.size() > 0:
-		enemy.set_path(path, builder.graph)
 
 func recalculate_enemy_path():
 	var path = astar.find_path(0,4)
@@ -49,7 +51,7 @@ func get_closest_node_id(pos: Vector3) -> int:
 	var closest_id = -1
 	var closest_dist = INF
 
-	for id in builder.graph.nodes:
+	for id in builder.graph.nodes.keys():
 
 		var node_pos = builder.graph.nodes[id].position
 		var dist = pos.distance_to(node_pos)

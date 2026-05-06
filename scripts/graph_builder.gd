@@ -4,9 +4,6 @@ extends Node
 
 var graph = Graph.new()
 
-func _ready():
-	build_graph()
-
 func build_graph():
 	var waypoints = get_tree().get_nodes_in_group("waypoints")
 

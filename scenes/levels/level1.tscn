@@ -198,10 +198,6 @@ id = 30
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.64238, 1, -121.94318)
 id = 31
 
-[node name="Waypoint34" parent="Waypoints" unique_id=1538790854 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.64238, 1, -141.11163)
-id = 33
-
 [node name="Waypoint35" parent="Waypoints" unique_id=1197914738 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.64238, 1, -141.11163)
 id = 34
