@@ -15,10 +15,22 @@ func set_path(p: Array, graph: Graph):
 	if p.size() == 0:
 		return
 
+	var new_target = graph.nodes[p[p.size() - 1]].position
+
+	if path.size() > 0:
+		var current_target = path[path.size() - 1]
+		if new_target.distance_to(current_target) < 1.0:
+			return
+
 	path.clear()
 
-	for id in p:
-		path.append(graph.nodes[id].position)
+	for i in range(p.size()):
+		var pos = graph.nodes[p[i]].position
+
+		if i == 0 and global_position.distance_to(pos) < 1.0:
+			continue
+
+		path.append(pos)
 		
 func _on_body_entered(body):
 	if body.name == "Player":
