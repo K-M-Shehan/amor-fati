@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmtp54g3bvqdt" path="res://scripts/level1.gd" id="1_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="2_dywbp"]
+[ext_resource type="Texture2D" uid="uid://dn0fuqbd8xy2p" path="res://textures/grass.jpg" id="2_plydf"]
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="5_dywbp"]
@@ -9,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="7_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="8_8a7m2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgp6g"]
-albedo_color = Color(0.03529412, 0.56078434, 0.011764706, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
+albedo_texture = ExtResource("2_plydf")
+uv1_triplanar = true
 
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1
@@ -29,13 +31,15 @@ albedo_color = Color(0.19215687, 0.19607843, 1, 1)
 [node name="Level1" type="Node3D" unique_id=517257717]
 script = ExtResource("1_bfxgj")
 
-[node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
+[node name="Map" type="Node3D" parent="." unique_id=1526010671]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1278152255]
+[node name="Ground" type="CSGBox3D" parent="Map" unique_id=1278152255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13916016, -0.04449463, -81.04541)
 use_collision = true
 size = Vector3(130, 1.0889893, 218)
-material = SubResource("StandardMaterial3D_sgp6g")
+material = SubResource("StandardMaterial3D_5ntmo")
+
+[node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("3_1seuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.59037, 1.0039877, -141.87094)
