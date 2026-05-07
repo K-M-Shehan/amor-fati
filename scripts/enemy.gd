@@ -46,40 +46,45 @@ func get_lookahead_target():
 	var index = min(lookahead_steps, path.size() - 1)
 	return path[index]
 
-func _physics_process(_delta):
-
+func has_line_of_sight() -> bool:
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(
+		global_position,
+		player.global_position
+	)
+	# Exclude this enemy from the raycast
+	query.exclude = [self]
+	var result = space_state.intersect_ray(query)
+	# If nothing was hit, or what was hit is the player, we have LOS
+	return result.is_empty() or result.collider == player
+	
+func _physics_process(delta):
+	var dist_to_player = global_position.distance_to(player.global_position)
 	var target
 
-	# if close enough to player → chase directly
-	if global_position.distance_to(player.global_position) < 15.0:
+	# Close/medium range: chase directly if we can see the player
+	if dist_to_player < 20.0 and has_line_of_sight():
 		target = player.global_position
-		
-	var next_node = get_lookahead_target()
-
-	if next_node != null:
-		var dist_to_player = global_position.distance_to(player.global_position)
-		var dist_to_node = global_position.distance_to(next_node)
-
-		# simple, stable rule
-		if dist_to_player < 4.0:
-			target = player.global_position
-		else:
-			target = next_node
+	# Far away or LOS blocked: follow the nav graph
 	else:
-		target = player.global_position
+		var next_node = get_lookahead_target()
+		if next_node != null:
+			target = next_node
+		else:
+			target = player.global_position
 
+	# Movement direction
 	var dir = (target - global_position).normalized()
-	
-	# rotation
+
+	# Smooth rotation to face movement direction
 	if dir.length() > 0.01:
 		var target_angle = atan2(dir.x, dir.z)
-		rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * _delta)
+		rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
 
-	var desired_velocity = dir * speed
-	velocity = velocity.lerp(desired_velocity, 0.15)
-	
+	# Smooth velocity transition to avoid snapping
+	velocity = velocity.lerp(dir * speed, 6.0 * delta)
 	move_and_slide()
 
-	# move along path
-	if path.size() > 0 and global_position.distance_to(path[0]) < 0.3:
+	# Remove passed nodes aggressively to avoid stalling
+	while path.size() > 0 and global_position.distance_to(path[0]) < 1.0:
 		path.pop_front()
