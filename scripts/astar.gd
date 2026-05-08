@@ -1,11 +1,25 @@
 class_name AStarCustom
 
+enum HeuristicType {
+	EUCLIDEAN,    # standard, balanced
+	MANHATTAN,    # faster but less accurate in 3D
+	WEIGHTED      # aggressive, prioritises getting closer fast
+}
+
 var graph: Graph
+var heuristic_type: HeuristicType = HeuristicType.EUCLIDEAN
 
 func _init(g: Graph):
 	graph = g
 
 func heuristic(a: Vector3, b: Vector3) -> float:
+	match heuristic_type:
+		HeuristicType.EUCLIDEAN:
+			return a.distance_to(b)
+		HeuristicType.MANHATTAN:
+			return abs(a.x - b.x) + abs(a.y - b.y) + abs(a.z - b.z)
+		HeuristicType.WEIGHTED:
+			return a.distance_to(b) * 2.0  # greedier, faster but less optimal
 	return a.distance_to(b)
 
 func find_path(start: int, goal: int) -> Array:

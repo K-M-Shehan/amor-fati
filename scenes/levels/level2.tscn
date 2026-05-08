@@ -49,6 +49,7 @@ fog_height_density = 0.15
 [node name="Level2" type="Node3D" unique_id=517257717]
 script = ExtResource("1_sqrei")
 keys_required = 3
+heuristic_type = 1
 
 [node name="Map" type="Node3D" parent="." unique_id=1526010671]
 
