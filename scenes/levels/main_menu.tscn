@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://5wmufpxk1ixn"]
+
+[ext_resource type="Script" uid="uid://dswbtmcm3pdh5" path="res://scripts/main_menu.gd" id="1_cn35j"]
+[ext_resource type="Texture2D" uid="uid://dr22lb8jkvcud" path="res://textures/title/a_title.png" id="1_fsby3"]
+[ext_resource type="Texture2D" uid="uid://cbyspum6hmfgm" path="res://textures/title/m_title_filled.png" id="2_sn5u3"]
+[ext_resource type="Texture2D" uid="uid://b5t1cbbjth5w4" path="res://textures/title/o_title.png" id="3_cn35j"]
+[ext_resource type="Texture2D" uid="uid://c6n0y3t3pad0a" path="res://textures/title/r_title.png" id="4_wko7x"]
+[ext_resource type="Texture2D" uid="uid://crxcvee3h402f" path="res://textures/title/f2_title.png" id="5_pwqr4"]
+[ext_resource type="Texture2D" uid="uid://bcog735f7w8ch" path="res://textures/title/a2_title.png" id="6_ohdsy"]
+[ext_resource type="Texture2D" uid="uid://ralgd4qyvdn6" path="res://textures/title/t2_title.png" id="7_fwnpy"]
+[ext_resource type="Texture2D" uid="uid://bu4sqjwegr76r" path="res://textures/title/i_title.png" id="8_k0nyb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_all2k"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="MainMenu" type="Control" unique_id=116608454]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cn35j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1449198773]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1203021951]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1017605120]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = 1.0
+offset_right = 79.5
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1724084368]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=666557401]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1422211663]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=179980343]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
+text = "Exit"
+
+[node name="Letter1" type="TextureRect" parent="CanvasLayer" unique_id=1913535778]
+offset_left = 127.0
+offset_top = 118.0
+offset_right = 207.0
+offset_bottom = 198.0
+texture = ExtResource("1_fsby3")
+expand_mode = 2
+
+[node name="Letter2" type="TextureRect" parent="CanvasLayer" unique_id=1849728675]
+offset_left = 231.0
+offset_top = 153.0
+offset_right = 311.0
+offset_bottom = 233.0
+texture = ExtResource("2_sn5u3")
+expand_mode = 2
+
+[node name="Letter3" type="TextureRect" parent="CanvasLayer" unique_id=1660612121]
+offset_left = 336.0
+offset_top = 128.0
+offset_right = 416.0
+offset_bottom = 208.0
+texture = ExtResource("3_cn35j")
+expand_mode = 2
+
+[node name="Letter4" type="TextureRect" parent="CanvasLayer" unique_id=1945522126]
+offset_left = 444.0
+offset_top = 108.0
+offset_right = 524.0
+offset_bottom = 188.0
+texture = ExtResource("4_wko7x")
+expand_mode = 2
+
+[node name="Letter5" type="TextureRect" parent="CanvasLayer" unique_id=900994964]
+offset_left = 634.0
+offset_top = 107.0
+offset_right = 714.0
+offset_bottom = 187.0
+texture = ExtResource("5_pwqr4")
+expand_mode = 2
+
+[node name="Letter6" type="TextureRect" parent="CanvasLayer" unique_id=812050140]
+offset_left = 738.0
+offset_top = 138.0
+offset_right = 818.0
+offset_bottom = 218.0
+texture = ExtResource("6_ohdsy")
+expand_mode = 2
+
+[node name="Letter7" type="TextureRect" parent="CanvasLayer" unique_id=676006707]
+offset_left = 850.0
+offset_top = 89.0
+offset_right = 930.0
+offset_bottom = 169.0
+texture = ExtResource("7_fwnpy")
+expand_mode = 2
+
+[node name="Letter8" type="TextureRect" parent="CanvasLayer" unique_id=967808436]
+offset_left = 962.0
+offset_top = 128.0
+offset_right = 1042.0
+offset_bottom = 208.0
+texture = ExtResource("8_k0nyb")
+expand_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
