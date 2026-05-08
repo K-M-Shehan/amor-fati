@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="11_nkeig"]
 [ext_resource type="PackedScene" uid="uid://cx3thlq4cskgo" path="res://scenes/environment/iron_fence_border_gate.tscn" id="12_4fww7"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="12_nfihu"]
+[ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="20_gvm5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_plydf")
@@ -92,6 +93,9 @@ material = SubResource("StandardMaterial3D_nfihu")
 [node name="t1" parent="Map" unique_id=1983311146 instance=ExtResource("11_nkeig")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -16.869488, -8.520401, -26.462582)
 
+[node name="t5" parent="Map" unique_id=291497773 instance=ExtResource("11_nkeig")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -67.751724, -8.520401, -128.8364)
+
 [node name="t4" parent="Map" unique_id=542377423 instance=ExtResource("11_nkeig")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.874172, -8.520401, -158.19714)
 
@@ -110,6 +114,9 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -38.7358, -9.032528, -88.8
 [node name="Tree4" parent="Map" unique_id=1175575035 instance=ExtResource("7_jprdt")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -71.54609, -8.783318, -7.6353493)
 
+[node name="Tree10" parent="Map" unique_id=798058962 instance=ExtResource("7_jprdt")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.780548, -8.783318, -170.80849)
+
 [node name="Tree5" parent="Map" unique_id=1996914700 instance=ExtResource("8_ps2vj")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 2, -9, 16)
 
@@ -121,6 +128,9 @@ transform = Transform3D(0.29317307, 0, -9.995701, 0, 10, 0, 9.995701, 0, 0.29317
 
 [node name="Tree7" parent="Map" unique_id=914060465 instance=ExtResource("9_sbmf2")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -44.169525, -9.4466095, -6.69343)
+
+[node name="Tree11" parent="Map" unique_id=1882239119 instance=ExtResource("9_sbmf2")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -57.56653, -9.4466095, -154.02148)
 
 [node name="WaterPatch" type="CSGBox3D" parent="Map" unique_id=559535868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.292175, 0.013203859, -73.37745)
@@ -547,3 +557,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4637191, 0.99176514, -152.6
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("8_8a7m2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
+
+[node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_gvm5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.239879, 8.427127, -190.50957)
