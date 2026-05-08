@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw0p2cebp6203"]
 
 [ext_resource type="Script" uid="uid://bsdtmyoaa108t" path="res://scripts/level2.gd" id="1_sqrei"]
-[ext_resource type="Texture2D" uid="uid://dn0fuqbd8xy2p" path="res://textures/grass.jpg" id="2_bxuut"]
+[ext_resource type="Texture2D" uid="uid://cq7exlf5tcb3m" path="res://textures/se_ground.jpeg" id="2_sqrei"]
 [ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="3_g04qb"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="4_ida7w"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="5_4wmb1"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="20_grqcv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
-albedo_texture = ExtResource("2_bxuut")
+albedo_texture = ExtResource("2_sqrei")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkeig"]
