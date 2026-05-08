@@ -31,6 +31,9 @@ albedo_texture = ExtResource("8_nkeig")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbmf2"]
+albedo_color = Color(0.2784314, 0.1882353, 1, 1)
+
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1
 background_color = Color(0.31755474, 0.77655405, 0.98390216, 1)
@@ -86,11 +89,20 @@ material = SubResource("StandardMaterial3D_nfihu")
 [node name="t1" parent="Map" unique_id=1983311146 instance=ExtResource("11_nkeig")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -16.869488, -8.520401, -26.462582)
 
+[node name="t4" parent="Map" unique_id=542377423 instance=ExtResource("11_nkeig")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.874172, -8.520401, -158.19714)
+
 [node name="t2" parent="Map" unique_id=530007728 instance=ExtResource("12_nfihu")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -57.557613, -8.938599, 3.163807)
 
+[node name="t3" parent="Map" unique_id=1563795619 instance=ExtResource("12_nfihu")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -30.265478, -8.938599, -115.9758)
+
 [node name="Tree3" parent="Map" unique_id=876821487 instance=ExtResource("6_lgguw")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -8.818356, -9.032528, 17.552227)
+
+[node name="Tree9" parent="Map" unique_id=1821046443 instance=ExtResource("6_lgguw")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -38.7358, -9.032528, -88.82115)
 
 [node name="Tree4" parent="Map" unique_id=1175575035 instance=ExtResource("7_jprdt")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -71.54609, -8.783318, -7.6353493)
@@ -101,6 +113,17 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 2, -9, 16)
 [node name="Tree6" parent="Map" unique_id=1426823618 instance=ExtResource("9_sbmf2")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 32.09816, -9.4466095, -15)
 
+[node name="Tree8" parent="Map" unique_id=1381941828 instance=ExtResource("9_sbmf2")]
+transform = Transform3D(0.29317307, 0, -9.995701, 0, 10, 0, 9.995701, 0, 0.29317307, 31.706978, -9.4466095, -120.07238)
+
+[node name="Tree7" parent="Map" unique_id=914060465 instance=ExtResource("9_sbmf2")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -44.169525, -9.4466095, -6.69343)
+
+[node name="WaterPatch" type="CSGBox3D" parent="Map" unique_id=559535868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.292175, 0.013203859, -73.37745)
+size = Vector3(23.560375, 1, 25.318727)
+material = SubResource("StandardMaterial3D_sbmf2")
+
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("3_1seuy")]
@@ -110,6 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
+visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)
@@ -378,4 +402,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4341397, 0.52748716, -189.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.36637, 0.99176514, -118.07295)
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("8_8a7m2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.898893, 0.99176466, -113.71316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
