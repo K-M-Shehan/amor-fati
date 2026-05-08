@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw0p2cebp6203"]
 
-[ext_resource type="Script" uid="uid://bmtp54g3bvqdt" path="res://scripts/level1.gd" id="1_b3p8y"]
+[ext_resource type="Script" uid="uid://bsdtmyoaa108t" path="res://scripts/level2.gd" id="1_sqrei"]
 [ext_resource type="Texture2D" uid="uid://dn0fuqbd8xy2p" path="res://textures/grass.jpg" id="2_bxuut"]
 [ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="3_g04qb"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="4_ida7w"]
@@ -46,8 +46,8 @@ fog_density = 0.0055
 fog_height = 0.5
 fog_height_density = 0.15
 
-[node name="Level1" type="Node3D" unique_id=517257717]
-script = ExtResource("1_b3p8y")
+[node name="Level2" type="Node3D" unique_id=517257717]
+script = ExtResource("1_sqrei")
 
 [node name="Map" type="Node3D" parent="." unique_id=1526010671]
 
