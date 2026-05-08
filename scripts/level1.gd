@@ -15,6 +15,11 @@ func _ready():
 	astar = AStarCustom.new(builder.graph)
 	bfs = BFS.new(builder.graph)
 	
+	player.level_graph = builder.graph
+	
+	for e in get_tree().get_nodes_in_group("enemies"):
+		e.level_graph = builder.graph
+	
 func recalculate_path():
 
 	for e in get_tree().get_nodes_in_group("enemies"):

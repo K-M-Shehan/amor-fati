@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+var level_graph: Graph = null
 var path = []
 var speed = 3.0
 var player
@@ -10,6 +11,19 @@ func _ready():
 	player = get_parent().get_node("Player")
 	$KillZone.body_entered.connect(_on_body_entered)
 
+func get_terrain_speed() -> float:
+	if level_graph == null:
+		return speed
+	for id in level_graph.nodes:
+		var node = level_graph.nodes[id]
+		if global_position.distance_to(node.position) < 8.0:
+			match node.terrain_type:
+				Waypoint.TileType.MUD:
+					return speed * 0.4
+				Waypoint.TileType.WATER:
+					return speed * 0.65
+	return speed
+	
 func set_path(p: Array, graph: Graph):
 	# only update if new path is different
 	if p.size() == 0:
@@ -82,7 +96,8 @@ func _physics_process(delta):
 		rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
 
 	# Smooth velocity transition to avoid snapping
-	velocity = velocity.lerp(dir * speed, 6.0 * delta)
+	var current_speed = get_terrain_speed()
+	velocity = velocity.lerp(dir * current_speed, 6.0 * delta)
 	move_and_slide()
 
 	# Remove passed nodes aggressively to avoid stalling

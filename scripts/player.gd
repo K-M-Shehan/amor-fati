@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+var level_graph: Graph = null
 var has_key = false
 var is_dead = false
 @onready var ray = $Camera3D/InteractRay
@@ -32,7 +33,7 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # mouse comes back when esc is pressed
 
 func _physics_process(delta):
-	const SPEED = 5.5
+	var SPEED = get_terrain_speed()
 	
 	var input_direction_2D = Input.get_vector(
 		"move_left", "move_right", "move_forward", "move_back"
@@ -56,6 +57,19 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	handle_interaction()
+	
+func get_terrain_speed() -> float:
+	if level_graph == null:
+		return 5.5
+	for id in level_graph.nodes:
+		var node = level_graph.nodes[id]
+		if global_position.distance_to(node.position) < 8.0:
+			match node.terrain_type:
+				Waypoint.TileType.MUD:
+					return 2.0
+				Waypoint.TileType.WATER:
+					return 3.5
+	return 5.5
 	
 func collect_key():
 	keys_collected += 1

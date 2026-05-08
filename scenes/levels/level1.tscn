@@ -110,7 +110,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
-visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)
@@ -128,27 +127,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076374054, 1, -84.59719)
 id = 1
 
 [node name="Waypoint3" parent="Waypoints" unique_id=51325911 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -96.47542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.732292, 1, -66.770004)
 id = 2
-tile_type = 1
+tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint6" parent="Waypoints" unique_id=515233649 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.619953, 1, -96.47542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.619953, 1, -78.26631)
 id = 5
-tile_type = 1
+tile_type = 2
+movement_penalty = 10.0
+
+[node name="Waypoint34" parent="Waypoints" unique_id=229948053 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.619953, 1, -67.1531)
+id = 33
+tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint7" parent="Waypoints" unique_id=194168914 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -103.83992)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.850439, 1, -100.81936)
 id = 6
-tile_type = 1
-movement_penalty = 10.0
 
 [node name="Waypoint8" parent="Waypoints" unique_id=80574881 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.660769, 1, -104.028946)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.137686, 1, -77.840775)
 id = 7
-tile_type = 1
+tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint4" parent="Waypoints" unique_id=1033382137 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
