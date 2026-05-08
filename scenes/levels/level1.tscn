@@ -281,13 +281,15 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -49.257313, 0.4503187, -56.65
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("3_1seuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.87094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.310106, 1.0039877, -96.95295)
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("3_1seuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.952095, 1.0039877, -96.2756)
+
+[node name="Enemy3" parent="." unique_id=995327176 instance=ExtResource("3_1seuy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.759289, 1.0039877, -139.81212)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
-visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)

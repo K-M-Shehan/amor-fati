@@ -5,11 +5,18 @@ var path = []
 @export var speed: float = 3.0
 var player
 var rotation_speed = 5.0
+var is_active: bool = false # enemy starts idle
 
 func _ready():
 	add_to_group("enemies")
 	player = get_parent().get_node("Player")
 	$KillZone.body_entered.connect(_on_body_entered)
+	$ActivationZone.body_entered.connect(_on_activation_zone_entered)
+	
+func _on_activation_zone_entered(body):
+	if body.name == "Player":
+		is_active = true
+		print("Enemy activated!")
 
 func get_terrain_speed() -> float:
 	if level_graph == null:
@@ -73,6 +80,9 @@ func has_line_of_sight() -> bool:
 	return result.is_empty() or result.collider == player
 	
 func _physics_process(delta):
+	if not is_active:	# do nothing if not yet activated
+		return
+	
 	var dist_to_player = global_position.distance_to(player.global_position)
 	var target
 
