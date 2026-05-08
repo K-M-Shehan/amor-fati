@@ -560,3 +560,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_gvm5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.239879, 8.427127, -190.50957)
+next_level = "res://scenes/levels/level2.tscn"
