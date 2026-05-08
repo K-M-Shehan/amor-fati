@@ -1,7 +1,5 @@
 ![Image with the title of the game "amor fati"](./resources/title.png)
 
-# amor-fati
-
 > a 3d interactive survival/escape game, where you have to try and escape the realm of the undead.
 
 ## Preamble
