@@ -11,7 +11,7 @@ func update_ui():
 	key_ui.text = "Keys: %d/%d" % [keys_collected, total_keys]
 
 var keys_collected = 0
-var total_keys = 2
+var total_keys = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # removes pointer from game
