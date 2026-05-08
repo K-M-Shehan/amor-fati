@@ -54,7 +54,7 @@ heuristic_type = 1
 [node name="Map" type="Node3D" parent="." unique_id=1526010671]
 
 [node name="Ground" type="CSGBox3D" parent="Map" unique_id=1278152255]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.20288, -0.04449463, -81.04541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.98924, -0.28710175, -81.13964)
 use_collision = true
 size = Vector3(260.68408, 1.0889893, 218)
 material = SubResource("StandardMaterial3D_5ntmo")
@@ -66,9 +66,9 @@ size = Vector3(1, 17.410156, 1)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="BackWall" type="CSGBox3D" parent="Map" unique_id=2059875774]
-transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, 0.15708458, 7.3498335, 28.37234)
+transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, 63.72067, 7.3498335, 28.372337)
 use_collision = true
-size = Vector3(1, 17.410156, 0.5753021)
+size = Vector3(1, 17.410156, 1.1127124)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall" type="CSGBox3D" parent="Map" unique_id=1789800350]
@@ -133,11 +133,14 @@ material = SubResource("StandardMaterial3D_sbmf2")
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("13_6igki")]
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("14_hlvfl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.87094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.294395, 1.0039877, -174.19095)
 speed = 4.0
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("14_hlvfl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.29187, 1.0039877, -90.51558)
+
+[node name="Enemy3" parent="." unique_id=1123158743 instance=ExtResource("14_hlvfl")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 178.00829, 1.0039877, 17.936651)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
