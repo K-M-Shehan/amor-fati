@@ -6,12 +6,15 @@ var path = []
 var player
 var rotation_speed = 5.0
 var is_active: bool = false # enemy starts idle
+@export var activation_size: Vector3 = Vector3(10.0, 5.0, 1.0)
 
 func _ready():
 	add_to_group("enemies")
 	player = get_parent().get_node("Player")
 	$KillZone.body_entered.connect(_on_body_entered)
 	$ActivationZone.body_entered.connect(_on_activation_zone_entered)
+	# set the box size from the export var
+	$ActivationZone/CollisionShape3D.shape.size = activation_size
 	
 func _on_activation_zone_entered(body):
 	if body.name == "Player":

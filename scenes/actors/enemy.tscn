@@ -478,7 +478,7 @@ radius = 1.9243164
 height = 4.0200195
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4i4j6"]
-size = Vector3(7.6817627, 7.6675415, 1)
+size = Vector3(10, 5, 1)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1058857341]
 script = ExtResource("1_7p1mj")
