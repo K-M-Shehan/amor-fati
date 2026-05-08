@@ -14,7 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="8_nkeig"]
 [ext_resource type="PackedScene" uid="uid://bd1nh26h23qd2" path="res://scenes/environment/tree_5.tscn" id="8_ps2vj"]
 [ext_resource type="PackedScene" uid="uid://b0ljtl0rth6hk" path="res://scenes/environment/tree_6.tscn" id="9_sbmf2"]
+[ext_resource type="PackedScene" uid="uid://b8ddbudj0s52l" path="res://scenes/environment/iron_fence.tscn" id="10_1xax6"]
+[ext_resource type="PackedScene" uid="uid://bir4jsxxx5rxf" path="res://scenes/environment/iron_fence_bar.tscn" id="11_g7tkf"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="11_nkeig"]
+[ext_resource type="PackedScene" uid="uid://cx3thlq4cskgo" path="res://scenes/environment/iron_fence_border_gate.tscn" id="12_4fww7"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="12_nfihu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
@@ -123,6 +126,147 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -44.169525, -9.4466095, -6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.292175, 0.013203859, -73.37745)
 size = Vector3(23.560375, 1, 25.318727)
 material = SubResource("StandardMaterial3D_sbmf2")
+
+[node name="Cemetary" type="Node3D" parent="Map" unique_id=40168387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.719696, 0, -67.041824)
+
+[node name="iron-fence" parent="Map/Cemetary" unique_id=160458933 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.29784, 0.50000024, -87.31655)
+
+[node name="iron-fence4" parent="Map/Cemetary" unique_id=141946849 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.382969, 0.50000024, -87.31654)
+
+[node name="iron-fence5" parent="Map/Cemetary" unique_id=16786621 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4.5459633, 0.50000024, -87.31654)
+
+[node name="iron-fence13" parent="Map/Cemetary" unique_id=1086413659 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.63446426, 0.50000024, -87.31654)
+
+[node name="iron-fence2" parent="Map/Cemetary" unique_id=1482416222 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.07975, 0.50000024, -87.31655)
+
+[node name="iron-fence3" parent="Map/Cemetary" unique_id=665990774 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20.005226, 0.50000024, -87.31655)
+
+[node name="iron-fence6" parent="Map/Cemetary" unique_id=730535469 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -23.968563, 0.50000024, -87.31654)
+
+[node name="iron-fence7" parent="Map/Cemetary" unique_id=1588797338 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -27.858269, 0.50000024, -87.31654)
+
+[node name="iron-fence8" parent="Map/Cemetary" unique_id=327879135 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -31.704365, 0.50000024, -87.31654)
+
+[node name="iron-fence9" parent="Map/Cemetary" unique_id=143360499 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -35.55836, 0.50000024, -87.31654)
+
+[node name="iron-fence10" parent="Map/Cemetary" unique_id=1747260617 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -39.494812, 0.50000024, -87.31654)
+
+[node name="iron-fence11" parent="Map/Cemetary" unique_id=1708796947 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -43.482567, 0.50000024, -87.31654)
+
+[node name="iron-fence12" parent="Map/Cemetary" unique_id=1433755594 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -47.30127, 0.50000024, -87.31654)
+
+[node name="iron-fence30" parent="Map/Cemetary" unique_id=310759986 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.29784, 0.50000024, -55.336777)
+
+[node name="iron-fence31" parent="Map/Cemetary" unique_id=1373221833 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.382969, 0.50000024, -55.336777)
+
+[node name="iron-fence32" parent="Map/Cemetary" unique_id=529009483 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4.5459633, 0.50000024, -55.336777)
+
+[node name="iron-fence33" parent="Map/Cemetary" unique_id=2137947611 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.63446426, 0.50000024, -55.336777)
+
+[node name="iron-fence34" parent="Map/Cemetary" unique_id=1171524553 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.07975, 0.50000024, -55.336777)
+
+[node name="iron-fence35" parent="Map/Cemetary" unique_id=246859489 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20.022312, 0.50000024, -55.336777)
+
+[node name="iron-fence38" parent="Map/Cemetary" unique_id=111724180 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -31.704365, 0.50000024, -55.336777)
+
+[node name="iron-fence43" parent="Map/Cemetary" unique_id=443633237 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -27.856365, 0.50000024, -55.336777)
+
+[node name="iron-fence39" parent="Map/Cemetary" unique_id=418852287 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -35.55836, 0.50000024, -55.336777)
+
+[node name="iron-fence40" parent="Map/Cemetary" unique_id=232985107 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -39.494812, 0.50000024, -55.336777)
+
+[node name="iron-fence41" parent="Map/Cemetary" unique_id=1448493982 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -43.482567, 0.50000024, -55.336777)
+
+[node name="iron-fence42" parent="Map/Cemetary" unique_id=924162028 instance=ExtResource("10_1xax6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -47.30127, 0.50000024, -55.336777)
+
+[node name="iron-fence14" parent="Map/Cemetary" unique_id=1400625500 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.596603, 0.50000024, -86.48659)
+
+[node name="iron-fence15" parent="Map/Cemetary" unique_id=1049377862 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -86.48659)
+
+[node name="iron-fence16" parent="Map/Cemetary" unique_id=1703852975 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -82.58699)
+
+[node name="iron-fence17" parent="Map/Cemetary" unique_id=1917930987 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -78.63074)
+
+[node name="iron-fence18" parent="Map/Cemetary" unique_id=435093266 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -74.63594)
+
+[node name="iron-fence19" parent="Map/Cemetary" unique_id=66506871 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -70.681076)
+
+[node name="iron-fence20" parent="Map/Cemetary" unique_id=1185091969 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -66.78148)
+
+[node name="iron-fence21" parent="Map/Cemetary" unique_id=1375671072 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -62.82524)
+
+[node name="iron-fence22" parent="Map/Cemetary" unique_id=2094391564 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, 0.34534836, 0.50000024, -58.830437)
+
+[node name="iron-fence23" parent="Map/Cemetary" unique_id=1923664894 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -82.50412)
+
+[node name="iron-fence24" parent="Map/Cemetary" unique_id=271921534 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -78.54787)
+
+[node name="iron-fence25" parent="Map/Cemetary" unique_id=778281823 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -74.55307)
+
+[node name="iron-fence26" parent="Map/Cemetary" unique_id=1005606548 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -70.598206)
+
+[node name="iron-fence27" parent="Map/Cemetary" unique_id=318368111 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -66.69861)
+
+[node name="iron-fence28" parent="Map/Cemetary" unique_id=1411465422 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -62.74237)
+
+[node name="iron-fence29" parent="Map/Cemetary" unique_id=1056158900 instance=ExtResource("10_1xax6")]
+transform = Transform3D(-1.7484555e-07, 0, -4, 0, 4, 0, 4, 0, -1.7484555e-07, -50.61399, 0.50000024, -58.747566)
+
+[node name="iron-fence-bar" parent="Map/Cemetary" unique_id=1213547133 instance=ExtResource("11_g7tkf")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.5095882, 0.4503187, -88.53468)
+
+[node name="iron-fence-bar3" parent="Map/Cemetary" unique_id=744257349 instance=ExtResource("11_g7tkf")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.5095882, 0.4503187, -56.79875)
+
+[node name="iron-fence-bar2" parent="Map/Cemetary" unique_id=457616643 instance=ExtResource("11_g7tkf")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -49.257313, 0.4503187, -88.53468)
+
+[node name="iron-fence-border-gate" parent="Map/Cemetary" unique_id=686086944 instance=ExtResource("12_4fww7")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -23.89925, 0.49999952, -55.35704)
+
+[node name="iron-fence-bar4" parent="Map/Cemetary" unique_id=2057853171 instance=ExtResource("11_g7tkf")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -49.257313, 0.4503187, -56.65805)
 
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("2_dywbp")]
 
@@ -399,7 +543,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4341397, 0.52748716, -189.70084)
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("8_8a7m2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.36637, 0.99176514, -118.07295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4637191, 0.99176514, -152.6931)
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("8_8a7m2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
