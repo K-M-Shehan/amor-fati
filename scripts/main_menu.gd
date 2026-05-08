@@ -11,9 +11,18 @@ extends Control
 	$CanvasLayer/Letter8,
 ]
 
+@onready var buttons = [
+	$CanvasLayer/VBoxContainer/StartButton,
+	$CanvasLayer/VBoxContainer/OptionsButton,
+	$CanvasLayer/VBoxContainer/CreditsButton,
+	$CanvasLayer/VBoxContainer/ExitButton,
+]
+
 func _ready():
 	for letter in letters:
 		letter.modulate.a = 0.0
+	for button in buttons:
+		button.modulate.a = 0.0
 	await get_tree().create_timer(0.3).timeout
 	reveal_title()
 
@@ -25,6 +34,14 @@ func reveal_title():
 		tween.set_parallel(true)
 		tween.tween_property(letter, "modulate:a", 1.0, 0.2)
 		tween.tween_property(letter, "position:y", original_pos.y, 0.2)
+		await tween.finished
+	await get_tree().create_timer(0.3).timeout  # small pause before buttons
+	reveal_buttons()
+
+func reveal_buttons():
+	for button in buttons:
+		var tween = create_tween()
+		tween.tween_property(button, "modulate:a", 1.0, 0.2)
 		await tween.finished
 
 func _on_start_button_pressed() -> void:
