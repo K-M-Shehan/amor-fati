@@ -409,13 +409,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.20154, 0.52748716, -189.70084)
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("19_m0i7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4637191, 0.99176514, -152.6931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.52474, 0.99176514, -185.41331)
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("19_m0i7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.516222, 0.99176466, -72.013885)
 
 [node name="Key3" parent="." unique_id=1046211851 instance=ExtResource("19_m0i7f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.420105, 0.99176466, -72.013885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.67436, 0.99176466, 22.264654)
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_grqcv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.93018, 8.427127, -190.50957)
