@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var level_graph: Graph = null
 var path = []
-var speed = 3.0
+@export var speed: float = 3.0
 var player
 var rotation_speed = 5.0
 

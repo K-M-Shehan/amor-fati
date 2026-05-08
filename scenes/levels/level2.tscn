@@ -140,6 +140,7 @@ material = SubResource("StandardMaterial3D_sbmf2")
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("14_hlvfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.87094)
+speed = 4.0
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("14_hlvfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
