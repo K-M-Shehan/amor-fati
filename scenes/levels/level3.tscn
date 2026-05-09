@@ -78,9 +78,9 @@ size = Vector3(1, 17.410156, 0.94124985)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall" type="CSGBox3D" parent="Map" unique_id=1789800350]
-transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -37.195507, 7.3498335, -190.46864)
+transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -1.1876485, 7.3498335, -191.06975)
 use_collision = true
-size = Vector3(1, 17.410156, 0.25949764)
+size = Vector3(1, 17.410156, 0.56393284)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall2" type="CSGBox3D" parent="Map" unique_id=1109345345]
