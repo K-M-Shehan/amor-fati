@@ -430,16 +430,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.7
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -64.77057, 0.52748716, -421.57666)
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("16_rfqup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4637191, 0.99176514, -152.6931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.946186, 0.99176514, -177.80612)
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("16_rfqup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.70715, 0.99176466, 20.13636)
 
 [node name="Key3" parent="." unique_id=1046211851 instance=ExtResource("16_rfqup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.420105, 0.99176466, -72.013885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.85937, 0.99176466, -202.8505)
 
 [node name="Key4" parent="." unique_id=453619178 instance=ExtResource("16_rfqup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6134644, 0.99176466, -27.567978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.74132, 0.99176466, -414.9178)
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("17_0y7c6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -65.53025, 8.427127, -421.7617)
