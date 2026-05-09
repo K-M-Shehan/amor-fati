@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsdtmyoaa108t" path="res://scripts/level2.gd" id="1_sqrei"]
 [ext_resource type="Texture2D" uid="uid://cq7exlf5tcb3m" path="res://textures/se_ground.jpeg" id="2_sqrei"]
-[ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="3_g04qb"]
+[ext_resource type="Texture2D" uid="uid://fo4t0bcvlnwo" path="res://textures/wall-level1.jpg" id="3_g04qb"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="4_ida7w"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="5_4wmb1"]
 [ext_resource type="PackedScene" uid="uid://bu42cx1yf8h1y" path="res://scenes/environment/tree_3.tscn" id="6_5qtw0"]
@@ -129,8 +129,8 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -44.169525, -9.4466095, -6
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -57.56653, -9.4466095, -154.02148)
 
 [node name="WaterPatch" type="CSGBox3D" parent="Map" unique_id=559535868]
-transform = Transform3D(0.99965864, -0.00031259438, -0.026123267, 0.0003178489, 0.9999999, 0.00019736504, 0.02612321, -0.00020558608, 0.9996587, -21.468164, 0.0122561995, -152.29498)
-size = Vector3(20.70288, 1, 29.956646)
+transform = Transform3D(0.99965864, -0.00031259438, -0.026123267, 0.0003178489, 0.9999999, 0.00019736504, 0.02612321, -0.00020558608, 0.9996587, -13.891075, 0.01316114, -139.1818)
+size = Vector3(20.70288, 1, 20.786428)
 material = SubResource("StandardMaterial3D_sbmf2")
 
 [node name="WaterPatch2" type="CSGBox3D" parent="Map" unique_id=1116745735]
@@ -138,9 +138,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.39813, 0.013203859, -20.3
 size = Vector3(30.172443, 1, 34.269257)
 material = SubResource("StandardMaterial3D_sbmf2")
 
-[node name="WaterPatch3" type="CSGBox3D" parent="Map" unique_id=1272789217]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.219025, 0.013203859, -111.63341)
-size = Vector3(30.172443, 1, 34.269257)
+[node name="MudPatch" type="CSGBox3D" parent="Map" unique_id=1272789217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.46375, 0.013203859, -111.63341)
+size = Vector3(28.661905, 1, 34.269257)
 material = SubResource("StandardMaterial3D_sqrei")
 
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("13_6igki")]
@@ -156,6 +156,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.29187, 1.0039877, -90.5155
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 178.00829, 1.0039877, 17.936651)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
+visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)
@@ -232,17 +233,9 @@ id = 34
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22590256, 1, -141.11163)
 id = 39
 
-[node name="Waypoint41" parent="Waypoints" unique_id=2074885153 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.722517, 1, -141.11163)
-id = 40
-tile_type = 2
-movement_penalty = 10.0
-
 [node name="Waypoint42" parent="Waypoints" unique_id=281328697 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.193, 1, -141.112)
 id = 41
-tile_type = 2
-movement_penalty = 10.0
 
 [node name="Waypoint43" parent="Waypoints" unique_id=1586809093 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.33432, 1, -141.11163)
@@ -307,14 +300,10 @@ id = 46
 [node name="Waypoint48" parent="Waypoints" unique_id=1262043643 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.131128, 1, -163.80092)
 id = 47
-tile_type = 2
-movement_penalty = 10.0
 
 [node name="Waypoint49" parent="Waypoints" unique_id=1236862093 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.782, 1, -163.708)
 id = 48
-tile_type = 2
-movement_penalty = 10.0
 
 [node name="Waypoint9" parent="Waypoints" unique_id=305292517 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.812927, 1, -166.45352)
@@ -419,24 +408,6 @@ id = 24
 [node name="Waypoint69" parent="Waypoints" unique_id=316314173 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.12624, 1, -101.15781)
 id = 25
-
-[node name="Waypoint70" parent="Waypoints" unique_id=723120787 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.47686, 1, -101.15781)
-id = 26
-tile_type = 1
-movement_penalty = 20.0
-
-[node name="Waypoint71" parent="Waypoints" unique_id=1222554132 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.23341, 1, -101.15781)
-id = 27
-tile_type = 1
-movement_penalty = 20.0
-
-[node name="Waypoint73" parent="Waypoints" unique_id=1519597662 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.007416, 1, -119.334694)
-id = 29
-tile_type = 1
-movement_penalty = 20.0
 
 [node name="Waypoint74" parent="Waypoints" unique_id=1027088132 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.09122, 1, -119.334694)
@@ -573,12 +544,6 @@ id = 13
 [node name="Waypoint110" parent="Waypoints" unique_id=793711482 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.50905, 1, -121.53237)
 id = 14
-
-[node name="Waypoint111" parent="Waypoints" unique_id=154286303 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.448265, 1, -121.53237)
-id = 15
-tile_type = 1
-movement_penalty = 20.0
 
 [node name="Waypoint113" parent="Waypoints" unique_id=2089191565 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.32388, 1, 25.745476)
@@ -758,6 +723,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.50905, 1, -10.733795)
 id = 14
 tile_type = 2
 movement_penalty = 10.0
+
+[node name="Waypoint153" parent="Waypoints" unique_id=1171733079 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.372139, 1, -129.71143)
+id = 31
+tile_type = 2
+movement_penalty = 10.0
+
+[node name="Waypoint154" parent="Waypoints" unique_id=1611490609 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.372139, 1, -148.87988)
+id = 34
+tile_type = 2
+movement_penalty = 10.0
+
+[node name="Waypoint155" parent="Waypoints" unique_id=304097579 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.240425, 1, -148.87988)
+id = 39
+tile_type = 2
+movement_penalty = 10.0
+
+[node name="Waypoint167" parent="Waypoints" unique_id=192288624 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.888252, 1, -129.30063)
+id = 14
+tile_type = 2
+movement_penalty = 10.0
+
+[node name="Waypoint156" parent="Waypoints" unique_id=448470580 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.40585, 1, -101.74786)
+id = 31
+tile_type = 1
+movement_penalty = 20.0
+
+[node name="Waypoint157" parent="Waypoints" unique_id=506416103 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.40585, 1, -120.91632)
+id = 34
+tile_type = 1
+movement_penalty = 20.0
+
+[node name="Waypoint158" parent="Waypoints" unique_id=1722281431 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.53757, 1, -120.91632)
+id = 39
+tile_type = 1
+movement_penalty = 20.0
+
+[node name="Waypoint168" parent="Waypoints" unique_id=1528915010 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.88974, 1, -101.33707)
+id = 14
+tile_type = 1
+movement_penalty = 20.0
 
 [node name="Waypoint165" parent="Waypoints" unique_id=886936679 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.448265, 1, -10.733795)
