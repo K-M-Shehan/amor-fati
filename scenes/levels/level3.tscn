@@ -163,6 +163,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
 speed = 5.0
 
+[node name="Enemy3" parent="." unique_id=598032649 instance=ExtResource("11_ojkn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.560234, 1.0039877, 13.648239)
+speed = 5.0
+
+[node name="Enemy4" parent="." unique_id=1276231111 instance=ExtResource("11_ojkn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.560234, 1.0039877, -408.8219)
+speed = 5.0
+
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
 
