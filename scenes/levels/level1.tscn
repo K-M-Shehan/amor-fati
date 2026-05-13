@@ -290,6 +290,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.952095, 1.0039877, -96.275
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.759289, 1.0039877, -139.81212)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
+visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("4_2r1tl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)

@@ -1,14 +1,14 @@
 ![Image with the title of the game "amor fati"](./resources/title.png)
 
-> a 3d interactive survival/escape game, where you have to try and escape the realm of the undead.
+> a 3d interactive survival/escape game, where you have to try and escape the realm of the dead.
 
 ## Preamble
 
 This was made as a submission to a 3rd year assignment from the modules Graphics and Visualization and Intelligent Systems (it was a joint assignment).
 
-The graphics part is for GV and the path-finding algorithms implemented for the undead cover the requirements for IS.
+The graphics part is for GV and the path-finding algorithms implemented for the enemies cover the requirements for IS.
 
-We will be using Godot as the game engine to construct this 3d game due to its lightweight and also because I have some prior experience working with it for my submission in GMTK 2025.
+We will be using Godot as the game engine to construct this 3d game due to it being lightweight and also because I have some prior experience working with it for my submission in GMTK 2025.
 
 Blender will be used for any 3d modeling done for the game.
 
