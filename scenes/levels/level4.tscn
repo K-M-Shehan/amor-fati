@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bqbpmnfw88ot1"]
 
 [ext_resource type="Script" uid="uid://dduxqy4654f0k" path="res://scripts/level4.gd" id="1_y3vdi"]
-[ext_resource type="Texture2D" uid="uid://feny3xp0nuiw" path="res://textures/dungeon_floor.jpg" id="2_irrt8"]
-[ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="3_ev8xs"]
+[ext_resource type="Texture2D" uid="uid://8rw8tcow4oin" path="res://textures/ground-level4.png" id="2_tsmbm"]
+[ext_resource type="Texture2D" uid="uid://bgslpqrbq5my6" path="res://textures/wall-level4.jpg" id="3_tsmbm"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="4_q6dln"]
 [ext_resource type="PackedScene" uid="uid://bu42cx1yf8h1y" path="res://scenes/environment/tree_3.tscn" id="6_atlnk"]
 [ext_resource type="PackedScene" uid="uid://pn64yi3m8a6e" path="res://scenes/environment/tree_4.tscn" id="7_7kkoh"]
@@ -17,32 +17,43 @@
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="17_2c5pw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
-albedo_texture = ExtResource("2_irrt8")
+albedo_texture = ExtResource("2_tsmbm")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkeig"]
-albedo_texture = ExtResource("3_ev8xs")
+albedo_texture = ExtResource("3_tsmbm")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfihu"]
-albedo_texture = ExtResource("3_ev8xs")
+albedo_texture = ExtResource("3_tsmbm")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbmf2"]
 albedo_color = Color(0.2784314, 0.1882353, 1, 1)
 
-[sub_resource type="Environment" id="Environment_dywbp"]
-background_mode = 1
-background_color = Color(0.31755474, 0.77655405, 0.98390216, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.72741115, 0.4410394, 0.23817572, 1)
-fog_enabled = true
-fog_light_color = Color(0.30320397, 0.5161508, 0.8358356, 1)
-fog_density = 0.0055
-fog_height = 0.5
-fog_height_density = 0.15
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tsmbm"]
+sky_top_color = Color(0.04725127, 0.06633415, 0.091751345, 1)
+sky_horizon_color = Color(0.08288159, 0.020540262, 0.0046145464, 1)
+ground_bottom_color = Color(0.0023825646, 0.0017313131, 0.0011387673, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_y3vdi"]
+sky_material = SubResource("ProceduralSkyMaterial_tsmbm")
+
+[sub_resource type="Environment" id="Environment_irrt8"]
+background_mode = 2
+sky = SubResource("Sky_y3vdi")
+tonemap_mode = 3
+sdfgi_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.641934, 0.641934, 0.641934, 1)
+volumetric_fog_emission = Color(0.4630955, 0.37774715, 0, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.3
 
 [node name="Level4" type="Node3D" unique_id=517257717]
 script = ExtResource("1_y3vdi")
@@ -330,9 +341,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.49113, 0.41608894, 24.264
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
-environment = SubResource("Environment_dywbp")
+environment = SubResource("Environment_irrt8")
 
 [node name="Spike" parent="." unique_id=195264075 instance=ExtResource("14_ll01n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0023613, 0.73711616, -90.9553)

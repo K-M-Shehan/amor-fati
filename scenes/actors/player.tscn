@@ -31,6 +31,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4055429, -0.39351442)
 target_position = Vector3(0, 0, -2)
 collide_with_areas = true
 
+[node name="Sportlight" type="Node3D" parent="Camera3D" unique_id=707195348]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D/Sportlight" unique_id=566824435]
+light_color = Color(1, 1, 0.67058825, 1)
+light_energy = 4.0
+light_volumetric_fog_energy = 0.1
+spot_range = 10.0
+spot_angle_attenuation = 3.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1176259794]
 
 [node name="Crosshair" type="Label" parent="CanvasLayer" unique_id=894500592]
