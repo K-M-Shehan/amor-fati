@@ -6,8 +6,6 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cacbb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_15tap"]
-
 [node name="Player" type="CharacterBody3D" unique_id=1911212463]
 script = ExtResource("1_15tap")
 
@@ -19,21 +17,20 @@ shape = SubResource("CapsuleShape3D_cacbb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_cacbb")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1270276316]
-transform = Transform3D(0.14389563, 0, 0, 0, 0.09256786, 0, 0, 0, 1, 0, 1.4435705, -0.4999885)
-mesh = SubResource("BoxMesh_15tap")
+[node name="Head" type="Node3D" parent="." unique_id=1300946192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4463938, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1274834256]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1274834256]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4055429, -0.39351442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.040850997, -0.39351442)
 
-[node name="InteractRay" type="RayCast3D" parent="Camera3D" unique_id=65215758]
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D" unique_id=65215758]
 target_position = Vector3(0, 0, -2)
 collide_with_areas = true
 
-[node name="Sportlight" type="Node3D" parent="Camera3D" unique_id=707195348]
+[node name="Sportlight" type="Node3D" parent="Head/Camera3D" unique_id=707195348]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D/Sportlight" unique_id=566824435]
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/Sportlight" unique_id=566824435]
 light_color = Color(1, 1, 0.67058825, 1)
 light_energy = 4.0
 light_volumetric_fog_energy = 0.1
