@@ -4,10 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bf037t4u8rq03" path="res://textures/ceiling.png" id="2_5sfmg"]
 [ext_resource type="Texture2D" uid="uid://8rw8tcow4oin" path="res://textures/ground-level4.png" id="2_tsmbm"]
 [ext_resource type="Texture2D" uid="uid://bgslpqrbq5my6" path="res://textures/wall-level4.jpg" id="3_tsmbm"]
-[ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="4_q6dln"]
-[ext_resource type="PackedScene" uid="uid://bu42cx1yf8h1y" path="res://scenes/environment/tree_3.tscn" id="6_atlnk"]
-[ext_resource type="PackedScene" uid="uid://pn64yi3m8a6e" path="res://scenes/environment/tree_4.tscn" id="7_7kkoh"]
-[ext_resource type="PackedScene" uid="uid://b0ljtl0rth6hk" path="res://scenes/environment/tree_6.tscn" id="9_yw4fb"]
 [ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="10_1wpw8"]
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="11_w1hcc"]
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="12_ph4mq"]
@@ -34,9 +30,6 @@ uv1_world_triplanar = true
 albedo_texture = ExtResource("3_tsmbm")
 uv1_triplanar = true
 uv1_world_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbmf2"]
-albedo_color = Color(0.2784314, 0.1882353, 1, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tsmbm"]
 sky_top_color = Color(0.04725127, 0.06633415, 0.091751345, 1)
@@ -73,6 +66,7 @@ material = SubResource("StandardMaterial3D_5ntmo")
 
 [node name="Ceiling" type="CSGBox3D" parent="Map" unique_id=1496368135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.25464, 5.571842, -71.723145)
+visible = false
 use_collision = true
 size = Vector3(198.7876, 1.0889893, 199.35547)
 material = SubResource("StandardMaterial3D_tsmbm")
@@ -101,6 +95,24 @@ use_collision = true
 size = Vector3(0.5, 5, 199.355)
 material = SubResource("StandardMaterial3D_nfihu")
 
+[node name="SectionBRightWall" type="CSGBox3D" parent="Map" unique_id=1437000945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.641739, 2.97, -21.546354)
+use_collision = true
+size = Vector3(0.5, 5, 99.0918)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SectionBTopWall" type="CSGBox3D" parent="Map" unique_id=473952617]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 38.60122, 2.97, -70.84584)
+use_collision = true
+size = Vector3(0.5, 5, 191.14056)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SectionBTopWallSM" type="CSGBox3D" parent="Map" unique_id=944932771]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.188623, 4.003692, -70.84584)
+use_collision = true
+size = Vector3(0.5, 2.944629, 5.4140625)
+material = SubResource("StandardMaterial3D_nfihu")
+
 [node name="SideWallRight4" type="CSGBox3D" parent="Map" unique_id=551136790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3, 2.97, 28.34)
 use_collision = true
@@ -118,23 +130,6 @@ transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, 133.45804, 9.
 use_collision = true
 size = Vector3(1, 17.410156, 0.8419113)
 material = SubResource("StandardMaterial3D_nfihu")
-
-[node name="t4" parent="Map" unique_id=542377423 instance=ExtResource("4_q6dln")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.874172, -8.520401, -158.19714)
-
-[node name="Tree3" parent="Map" unique_id=876821487 instance=ExtResource("6_atlnk")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -8.818356, -9.032528, 17.552227)
-
-[node name="Tree10" parent="Map" unique_id=798058962 instance=ExtResource("7_7kkoh")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.780548, -8.783318, -109.7793)
-
-[node name="Tree8" parent="Map" unique_id=1381941828 instance=ExtResource("9_yw4fb")]
-transform = Transform3D(0.29317307, 0, -9.995701, 0, 10, 0, 9.995701, 0, 0.29317307, 31.706978, -9.4466095, -120.07238)
-
-[node name="WaterPatch" type="CSGBox3D" parent="Map" unique_id=559535868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.292175, 0.013203859, -73.37745)
-size = Vector3(23.560375, 1, 25.318727)
-material = SubResource("StandardMaterial3D_sbmf2")
 
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("10_1wpw8")]
 
@@ -155,7 +150,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.560234, 1.0039877, -121.3
 speed = 5.0
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
-visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)
@@ -163,6 +157,27 @@ id = 10
 
 [node name="Waypoint" parent="Waypoints" unique_id=436533689 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -85.0531)
+
+[node name="Waypoint50" parent="Waypoints" unique_id=1644032411 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -69.684906)
+
+[node name="Waypoint51" parent="Waypoints" unique_id=93041282 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -55.08419)
+
+[node name="Waypoint52" parent="Waypoints" unique_id=1762100097 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -41.972645)
+
+[node name="Waypoint53" parent="Waypoints" unique_id=855964774 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -27.85487)
+
+[node name="Waypoint54" parent="Waypoints" unique_id=658504277 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -11.3889675)
+
+[node name="Waypoint55" parent="Waypoints" unique_id=2052976487 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, 3.3064518)
+
+[node name="Waypoint56" parent="Waypoints" unique_id=577146305 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, 20.939953)
 
 [node name="Waypoint12" parent="Waypoints" unique_id=1306283300 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.710869, 1, -85.0531)
@@ -172,33 +187,9 @@ id = 11
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076374054, 1, -84.59719)
 id = 1
 
-[node name="Waypoint3" parent="Waypoints" unique_id=51325911 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.732292, 1, -66.770004)
-id = 2
-tile_type = 2
-movement_penalty = 10.0
-
-[node name="Waypoint6" parent="Waypoints" unique_id=515233649 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.619953, 1, -78.26631)
-id = 5
-tile_type = 2
-movement_penalty = 10.0
-
-[node name="Waypoint34" parent="Waypoints" unique_id=229948053 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.619953, 1, -67.1531)
-id = 33
-tile_type = 2
-movement_penalty = 10.0
-
 [node name="Waypoint7" parent="Waypoints" unique_id=194168914 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.850439, 1, -100.81936)
 id = 6
-
-[node name="Waypoint8" parent="Waypoints" unique_id=80574881 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.137686, 1, -77.840775)
-id = 7
-tile_type = 2
-movement_penalty = 10.0
 
 [node name="Waypoint4" parent="Waypoints" unique_id=1033382137 groups=["waypoints"] instance=ExtResource("12_ph4mq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.025784, 1, -84.37439)
@@ -365,7 +356,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.809727, 0.41608894, -50.9
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
 environment = SubResource("Environment_irrt8")
@@ -380,13 +370,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.13655, 0.73711616, -98.445
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, -98.05568)
 
 [node name="Spike4" parent="." unique_id=1684893009 instance=ExtResource("14_ll01n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.72907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.97997, 0.73711616, -80.464516)
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("15_hxr3b")]
-transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -49.48639, 0.52748716, 22.86052)
+transform = Transform3D(-1, 0, -1.3909066e-08, 0, 1, 0, 1.3909066e-08, 0, -1, 20.882442, 0.52748716, -98.7275)
 final_Door = true
 
-[node name="Door2" parent="." unique_id=785916523 instance=ExtResource("15_hxr3b")]
+[node name="SectionBDoor" parent="." unique_id=835417121 instance=ExtResource("15_hxr3b")]
+transform = Transform3D(-1, 0, -1.3909066e-08, 0, 1, 0, 1.3909066e-08, 0, -1, 20.882442, 0.52748716, -70.87357)
+
+[node name="SectionADoor" parent="." unique_id=785916523 instance=ExtResource("15_hxr3b")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -57.397285, 0.52748716, 22.86052)
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("16_cdy06")]
