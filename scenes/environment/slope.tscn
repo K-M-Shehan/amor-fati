@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dwp2nc0y8keo"]
+
+[ext_resource type="Texture2D" uid="uid://8rw8tcow4oin" path="res://textures/ground-level4.png" id="1_2qdt0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c84ug"]
+albedo_texture = ExtResource("1_2qdt0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_277dl"]
+material = SubResource("StandardMaterial3D_c84ug")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2qdt0"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Slope" type="MeshInstance3D" unique_id=1867323810]
+transform = Transform3D(47.974, 0, 0, 0, 7.22, 0, 0, 0, 100.15, 0, 0, 0)
+mesh = SubResource("PrismMesh_277dl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1026458044]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=672524070]
+shape = SubResource("ConvexPolygonShape3D_2qdt0")
