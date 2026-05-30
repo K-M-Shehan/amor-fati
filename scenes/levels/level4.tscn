@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="12_ph4mq"]
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="13_npa1m"]
 [ext_resource type="PackedScene" uid="uid://6uqu0s71wj2t" path="res://scenes/props/spike.tscn" id="14_ll01n"]
+[ext_resource type="Script" uid="uid://dxogfnekl2yw6" path="res://scripts/light_manager.gd" id="14_w24lh"]
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="15_hxr3b"]
 [ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="16_cdy06"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="17_2c5pw"]
@@ -1814,6 +1815,198 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
 [node name="CeilingLight7" parent="Map/Lights/LightRow" unique_id=1354809322 instance=ExtResource("5_f62st")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
 
+[node name="LightRow2" type="Node3D" parent="Map/Lights" unique_id=1743300738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2759)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow2" unique_id=1193990149 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow2" unique_id=1322583644 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow2" unique_id=1819004571 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow2" unique_id=511215880 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow2" unique_id=1740501076 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow2" unique_id=2119288202 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow2" unique_id=2094993387 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow3" type="Node3D" parent="Map/Lights" unique_id=2105768449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.44057)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow3" unique_id=1676953919 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow3" unique_id=684636607 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow3" unique_id=2014133148 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow3" unique_id=1223100463 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow3" unique_id=1753658615 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow3" unique_id=701850419 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow3" unique_id=1001711377 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow4" type="Node3D" parent="Map/Lights" unique_id=703071490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.394382)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow4" unique_id=1650553980 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow4" unique_id=334447531 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow4" unique_id=912040374 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow4" unique_id=282324429 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow4" unique_id=2133982923 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow4" unique_id=1764355777 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow4" unique_id=116997298 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow5" type="Node3D" parent="Map/Lights" unique_id=578913130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.76368)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow5" unique_id=1828294671 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow5" unique_id=1274410701 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow5" unique_id=1368847849 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow5" unique_id=1186384131 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow5" unique_id=302051035 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow5" unique_id=509266906 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow5" unique_id=1222377908 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow6" type="Node3D" parent="Map/Lights" unique_id=1302085240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55.10791)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow6" unique_id=1689143022 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow6" unique_id=1028103418 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow6" unique_id=2019453232 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow6" unique_id=1097619627 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow6" unique_id=1896575419 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow6" unique_id=1308899309 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow6" unique_id=889556333 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow7" type="Node3D" parent="Map/Lights" unique_id=1879600881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65.015205)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow7" unique_id=1656716438 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow7" unique_id=292537509 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow7" unique_id=2049486846 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow7" unique_id=50962876 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow7" unique_id=1474424711 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow7" unique_id=2005946822 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow7" unique_id=363921042 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow8" type="Node3D" parent="Map/Lights" unique_id=1400008535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -74.50539)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow8" unique_id=2635285 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow8" unique_id=398141137 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow8" unique_id=140515545 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow8" unique_id=1294577006 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow8" unique_id=148505860 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow8" unique_id=429648659 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow8" unique_id=738685605 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
+[node name="LightRow9" type="Node3D" parent="Map/Lights" unique_id=1512465127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -84.38005)
+
+[node name="CeilingLight" parent="Map/Lights/LightRow9" unique_id=1050689976 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.876484, 5.029695, 21.782719)
+
+[node name="CeilingLight2" parent="Map/Lights/LightRow9" unique_id=220745278 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.680466, 5.03, 21.783)
+
+[node name="CeilingLight3" parent="Map/Lights/LightRow9" unique_id=988565773 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.791142, 5.03, 21.783)
+
+[node name="CeilingLight4" parent="Map/Lights/LightRow9" unique_id=1159351928 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.865536, 5.03, 21.783)
+
+[node name="CeilingLight5" parent="Map/Lights/LightRow9" unique_id=1089949827 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.835321, 5.03, 21.783)
+
+[node name="CeilingLight6" parent="Map/Lights/LightRow9" unique_id=794852433 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1818871, 5.03, 21.783)
+
+[node name="CeilingLight7" parent="Map/Lights/LightRow9" unique_id=376207075 instance=ExtResource("5_f62st")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
+
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("10_1wpw8")]
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("11_w1hcc")]
@@ -2081,3 +2274,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.74132, 0.99176466, -120.8
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("17_2c5pw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 44.604805, 8.427127, -59.553894)
+
+[node name="LightManager" type="Node3D" parent="." unique_id=815455177 node_paths=PackedStringArray("player")]
+script = ExtResource("14_w24lh")
+player = NodePath("../Player")
