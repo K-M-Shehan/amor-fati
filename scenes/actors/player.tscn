@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://gvpg8fuw0tbw" path="res://scripts/player.gd" id="1_15tap"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cacbb"]
+radius = 0.36328125
+height = 1.7519531
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cacbb"]
 
@@ -10,7 +12,7 @@
 script = ExtResource("1_15tap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1264690533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87597656, 0)
 shape = SubResource("CapsuleShape3D_cacbb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1725705784]

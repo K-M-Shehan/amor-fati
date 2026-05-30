@@ -40,7 +40,7 @@ albedo_color = Color(0.2784314, 0.1882353, 1, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tsmbm"]
 sky_top_color = Color(0.04725127, 0.06633415, 0.091751345, 1)
-sky_horizon_color = Color(0.08288159, 0.020540262, 0.0046145464, 1)
+sky_horizon_color = Color(0.09357732, 0.096370704, 0.101963885, 1)
 ground_bottom_color = Color(0.0023825646, 0.0017313131, 0.0011387673, 1)
 ground_horizon_color = Color(0, 0, 0, 1)
 
@@ -96,9 +96,21 @@ size = Vector3(1, 17.410156, 0.85542965)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="SideWallRight3" type="CSGBox3D" parent="Map" unique_id=224162744]
-transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, 65.36864, 9.778316, -72.53781)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3, 2.97, -77.43)
 use_collision = true
-size = Vector3(1, 17.410156, 0.699646)
+size = Vector3(0.5, 5, 199.355)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SideWallRight4" type="CSGBox3D" parent="Map" unique_id=551136790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3, 2.97, 28.34)
+use_collision = true
+size = Vector3(0.5, 5, 10)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SideWallRight5" type="CSGBox3D" parent="Map" unique_id=116593638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.3, 4.93, 27)
+use_collision = true
+size = Vector3(0.5, 5, 10)
 material = SubResource("StandardMaterial3D_nfihu")
 
 [node name="SideWallRight2" type="CSGBox3D" parent="Map" unique_id=2072612130]
@@ -127,7 +139,8 @@ material = SubResource("StandardMaterial3D_sbmf2")
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("10_1wpw8")]
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("11_w1hcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.87094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2877, 1.0039877, -167.96468)
+speed = 5.0
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
@@ -348,7 +361,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.57415, 1, -121.53237)
 id = 16
 
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("13_npa1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.49113, 0.41608894, 24.26476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.809727, 0.41608894, -50.986145)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)
@@ -370,7 +383,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, -98.055
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.72907)
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("15_hxr3b")]
-transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 78.96079, 0.52748716, -77.14851)
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -49.48639, 0.52748716, 22.86052)
+final_Door = true
+
+[node name="Door2" parent="." unique_id=785916523 instance=ExtResource("15_hxr3b")]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -57.397285, 0.52748716, 22.86052)
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("16_cdy06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.490017, 0.99176514, -141.7227)
