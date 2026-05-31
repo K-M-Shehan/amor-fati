@@ -2377,6 +2377,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.56118, 1.1668491, -11.1252
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("17_2c5pw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 79.79606, 4.3515196, 28.66569)
+next_level = "res://scenes/levels/end_card.tscn"
 
 [node name="LightManager" type="Node3D" parent="." unique_id=815455177 node_paths=PackedStringArray("player")]
 script = ExtResource("14_w24lh")
