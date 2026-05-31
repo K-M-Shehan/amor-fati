@@ -75,6 +75,10 @@ func get_closest_node_id(pos: Vector3) -> int:
 			closest_id = id
 	return closest_id
 
+# Overridden by levels that use barricades (e.g. level3.gd)
+func trigger_barricade(_world_pos: Vector3) -> void:
+	pass
+
 func _physics_process(delta):
 	timer += delta
 	if timer > 1.0:
