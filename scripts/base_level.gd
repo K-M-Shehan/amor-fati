@@ -7,7 +7,6 @@ var astar
 var bfs
 var timer := 0.0
 var last_player_pos = Vector3.ZERO
-@export var keys_required: int = 2
 @export var heuristic_type: AStarCustom.HeuristicType = AStarCustom.HeuristicType.EUCLIDEAN
 
 func _ready():
@@ -17,7 +16,6 @@ func _ready():
 	astar.heuristic_type = heuristic_type
 	bfs = BFS.new(builder.graph)
 	player.level_graph = builder.graph
-	player.total_keys = keys_required
 	for e in get_tree().get_nodes_in_group("enemies"):
 		e.level_graph = builder.graph
 
