@@ -1,17 +1,17 @@
 extends Area3D
 
-@export var final_Door: bool = false
+@export var keys_needed: int = 0
 var is_open = false
 
 func interact(player):
-	if final_Door != true and is_open == false or player.keys_collected >= player.total_keys and final_Door == true and is_open == false:
+	if player.keys_collected >= keys_needed and is_open == false:
 		open_door()
 		is_open = true
 	elif is_open == true:
 		close_door()
 		is_open = false
 	else:
-		print("Need more keys!")
+		print("Need %d more keys!" % (keys_needed - player.keys_collected))
 
 func get_interaction_text():
 	if is_open == false:
