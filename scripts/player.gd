@@ -66,6 +66,17 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
+	for i in range(get_slide_collision_count()):
+		var col = get_slide_collision(i)
+		var body = col.get_collider()
+
+		if body is RigidBody3D:
+			var force = -col.get_normal()
+			force.y = 0
+			force = force.normalized()
+
+			body.apply_impulse(force * 2.5)
+	
 	handle_interaction()
 	
 func _headbob(time) -> Vector3:

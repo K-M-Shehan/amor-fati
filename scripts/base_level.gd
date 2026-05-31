@@ -33,10 +33,10 @@ func _setup_visualizer() -> void:
 	_visualizer = DebugVisualizer.new()
 	add_child(_visualizer)
 
-func recalculate_path():
+func recalculate_path() -> void:
 	for e in get_tree().get_nodes_in_group("enemies"):
-		var enemy_node = get_closest_node_id(e.global_position)
-		var player_node = get_closest_node_id(player.global_position)
+		var enemy_node  = get_closest_node_id(e.global_position)
+		var player_node = get_closest_unblocked_node_id(player.global_position)
 		if enemy_node == -1 or player_node == -1:
 			continue
 		var path = astar.find_path(enemy_node, player_node)
@@ -44,6 +44,20 @@ func recalculate_path():
 			e.set_path(path, builder.graph)
 	# Feed both results to the visualizer (only does work if not OFF)
 	_update_visualizer()
+
+# New helper — same as get_closest_node_id but skips blocked nodes
+func get_closest_unblocked_node_id(pos: Vector3) -> int:
+	var closest_id   = -1
+	var closest_dist = INF
+	for id in builder.graph.nodes.keys():
+		var node = builder.graph.nodes[id]
+		if node.blocked:
+			continue
+		var dist = pos.distance_to(node.position)
+		if dist < closest_dist:
+			closest_dist = dist
+			closest_id   = id
+	return closest_id
 
 func _update_visualizer() -> void:
 	if _visualizer == null:
@@ -86,3 +100,9 @@ func _physics_process(delta):
 		if player.global_position.distance_to(last_player_pos) > 2.0:
 			recalculate_path()
 			last_player_pos = player.global_position
+		else:
+			# Force recalc if any active enemy has an empty path
+			for e in get_tree().get_nodes_in_group("enemies"):
+				if e.is_active and e.path.size() == 0:
+					recalculate_path()
+					break
