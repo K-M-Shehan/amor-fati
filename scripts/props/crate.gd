@@ -5,6 +5,7 @@ var _blocked_node_id: int = -1
 var _last_block_pos: Vector3 = Vector3.ZERO
 var _check_timer: float = 0.0
 var _check_interval: float = 0.5   # check every 0.5s if box has moved enough
+var is_blocking: bool = false   # true only when actively sitting on a node
 
 func _ready() -> void:
 	add_to_group("crates")
@@ -15,6 +16,10 @@ func _ready() -> void:
 			_level = node
 			break
 		node = node.get_parent()
+	# Block the starting node immediately
+	if _level != null:
+		_last_block_pos = global_position + Vector3(999, 0, 0)  # force first update
+		_update_blocked_node()
 
 func _physics_process(delta: float) -> void:
 	_check_timer += delta
@@ -48,8 +53,9 @@ func _update_blocked_node() -> void:
 	_blocked_node_id = new_node_id
 	_last_block_pos = global_position
 
+	is_blocking = true
 	_level.recalculate_path()
-	print("PushBox moved — node %d now blocked" % new_node_id)
+	print("Crate moved — node %d now blocked" % new_node_id)
 
 func _block_node(node_id: int) -> void:
 	var graph = _level.builder.graph
@@ -76,3 +82,4 @@ func _restore_node(node_id: int) -> void:
 func _exit_tree() -> void:
 	if _blocked_node_id != -1 and _level != null:
 		_restore_node(_blocked_node_id)
+		is_blocking = false
