@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 var level_graph: Graph = null
-var has_key = false
 var is_dead = false
 
 # bob variables
@@ -16,10 +15,9 @@ var t_bob = 0.0
 @onready var key_ui = $"CanvasLayer/KeyCounter"
 
 func update_ui():
-	key_ui.text = "Keys: %d/%d" % [keys_collected, total_keys]
+	key_ui.text = "Keys: %d" % [keys_collected]
 
 var keys_collected = 0
-var total_keys = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # removes pointer from game
@@ -64,7 +62,7 @@ func _physics_process(delta):
 	
 	# head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
+	camera.transform.origin = _headbob(t_bob) # don't change this to head, your device will spontaneously combust
 		
 	move_and_slide()
 	
@@ -91,8 +89,6 @@ func get_terrain_speed() -> float:
 	
 func collect_key():
 	keys_collected += 1
-	has_key = keys_collected >= total_keys
-
 	update_ui()
 	
 func handle_interaction():
