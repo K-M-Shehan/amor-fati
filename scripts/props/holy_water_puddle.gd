@@ -35,10 +35,7 @@ func _apply_block() -> void:
 		for neighbor_id in graph.nodes[node_id].neighbors.duplicate():
 			graph.remove_edge(node_id, neighbor_id)
 	_applied = true
-
-	# Force all enemies onto graph path so blocked nodes are respected
-	for enemy in level.get_tree().get_nodes_in_group("enemies"):
-		enemy.force_graph_path = true
+	add_to_group("holy_water_puddles")
 
 	level.recalculate_path()
 	
@@ -57,10 +54,6 @@ func _restore_block() -> void:
 			var dist = target_node.position.distance_to(graph.nodes[other_id].position)
 			if dist < level.builder.connection_distance:
 				graph.add_edge(node_id, other_id)
-
-	# Re-enable direct chase once holy water expires
-	for enemy in level.get_tree().get_nodes_in_group("enemies"):
-		enemy.force_graph_path = false
 
 	level.recalculate_path()
 

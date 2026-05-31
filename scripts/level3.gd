@@ -69,13 +69,16 @@ func trigger_barricade(world_pos: Vector3) -> void:
 
 func recalculate_path() -> void:
 	var crates = get_tree().get_nodes_in_group("crates")
+	var puddles = get_tree().get_nodes_in_group("holy_water_puddles")
 	
-	# Check if any crate is actually blocking a node
+	# Any active blocker in the scene forces graph-only pathfinding
 	var any_blocking = false
 	for crate in crates:
 		if crate.is_blocking:
 			any_blocking = true
 			break
+	if puddles.size() > 0:
+		any_blocking = true
 
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		enemy.force_graph_path = any_blocking
