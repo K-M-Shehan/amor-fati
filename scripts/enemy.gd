@@ -40,6 +40,8 @@ func get_terrain_speed() -> float:
 	return speed
 	
 func set_path(p: Array, graph: Graph):
+	if not is_active:  # ignores inactive enemies but still does work
+		return
 	# only update if new path is different
 	if p.size() == 0:
 		return
