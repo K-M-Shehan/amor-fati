@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="15_lsxft"]
 [ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="16_rfqup"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="17_0y7c6"]
+[ext_resource type="PackedScene" uid="uid://e2nq1hssm87x" path="res://scenes/props/crate.tscn" id="18_wt4k6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_ahaer")
@@ -59,6 +60,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.25464, -0.04449463, -197.3
 use_collision = true
 size = Vector3(198.7876, 1.0889893, 450.69556)
 material = SubResource("StandardMaterial3D_5ntmo")
+
+[node name="Crate" parent="Map" unique_id=475476101 instance=ExtResource("18_wt4k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.02238, 1.2255161, -139.5493)
+
+[node name="Crate2" parent="Map" unique_id=991812826 instance=ExtResource("18_wt4k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.386047, 1.2255161, -134.07294)
 
 [node name="SideWallLeft" type="CSGBox3D" parent="Map" unique_id=1372538553]
 transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, -64.824326, 9.778316, -193.26224)
@@ -177,6 +184,7 @@ speed = 5.0
 activation_size = Vector3(60, 5, 60)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
+visible = false
 
 [node name="Waypoint11" parent="Waypoints" unique_id=14972918 groups=["waypoints"] instance=ExtResource("12_6vxnv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)
