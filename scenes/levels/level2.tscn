@@ -40,14 +40,11 @@ albedo_color = Color(0.4392157, 0.32941177, 0.24313726, 1)
 
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1
-background_color = Color(0.31755474, 0.77655405, 0.98390216, 1)
+background_color = Color(0.8888582, 0.6875817, 0.2205225, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.72741115, 0.4410394, 0.23817572, 1)
+ambient_light_color = Color(0.619538, 0.5087095, 0.087218024, 1)
 fog_enabled = true
-fog_light_color = Color(0.30320397, 0.5161508, 0.8358356, 1)
-fog_density = 0.0055
-fog_height = 0.5
-fog_height_density = 0.15
+fog_light_color = Color(0.96082515, 0.61508, 0.34751394, 1)
 
 [node name="Level2" type="Node3D" unique_id=517257717]
 script = ExtResource("1_sqrei")
