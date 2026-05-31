@@ -7,6 +7,7 @@ var player
 var rotation_speed = 5.0
 var is_active: bool = false # enemy starts idle
 @export var activation_size: Vector3 = Vector3(10.0, 5.0, 1.0)
+var force_graph_path: bool = false
 
 func _ready():
 	add_to_group("enemies")
@@ -101,7 +102,7 @@ func _physics_process(delta):
 	var target
 
 	# Close/medium range: chase directly if we can see the player
-	if dist_to_player < 20.0 and has_line_of_sight():
+	if dist_to_player < 20.0 and has_line_of_sight() and not force_graph_path:
 		target = player.global_position
 	# Far away or LOS blocked: follow the nav graph
 	else:
