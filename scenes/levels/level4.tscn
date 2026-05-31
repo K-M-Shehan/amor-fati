@@ -63,6 +63,7 @@ adjustment_brightness = 1.3
 
 [node name="Level4" type="Node3D" unique_id=517257717]
 script = ExtResource("1_y3vdi")
+heuristic_type = 2
 
 [node name="Map" type="Node3D" parent="." unique_id=1526010671]
 
