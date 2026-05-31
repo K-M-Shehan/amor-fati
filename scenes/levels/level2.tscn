@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bw0p2cebp6203"]
 
 [ext_resource type="Script" uid="uid://bsdtmyoaa108t" path="res://scripts/level2.gd" id="1_sqrei"]
-[ext_resource type="Texture2D" uid="uid://cq7exlf5tcb3m" path="res://textures/se_ground.jpeg" id="2_sqrei"]
-[ext_resource type="Texture2D" uid="uid://fo4t0bcvlnwo" path="res://textures/wall-level1.jpg" id="3_g04qb"]
+[ext_resource type="Texture2D" uid="uid://0da1rcrlwav4" path="res://textures/se_ground.jpeg" id="2_sqrei"]
+[ext_resource type="Texture2D" uid="uid://imi8jty35v6m" path="res://textures/wall-level1.jpg" id="3_g04qb"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="4_ida7w"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="5_4wmb1"]
 [ext_resource type="PackedScene" uid="uid://bu42cx1yf8h1y" path="res://scenes/environment/tree_3.tscn" id="6_5qtw0"]
@@ -148,12 +148,15 @@ material = SubResource("StandardMaterial3D_sqrei")
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("14_hlvfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.294395, 1.0039877, -174.19095)
 speed = 4.0
+activation_size = Vector3(40, 5, 40)
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("14_hlvfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.29187, 1.0039877, -90.51558)
+activation_size = Vector3(30, 5, 30)
 
 [node name="Enemy3" parent="." unique_id=1123158743 instance=ExtResource("14_hlvfl")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 178.00829, 1.0039877, 17.936651)
+activation_size = Vector3(40, 5, 40)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
@@ -803,6 +806,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.7
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("18_liaw4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.20154, 0.52748716, -189.70084)
+keys_needed = 3
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("19_m0i7f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.52474, 0.99176514, -185.41331)

@@ -72,21 +72,21 @@ size = Vector3(1, 17.410156, 0.8922653)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="BackWall2" type="CSGBox3D" parent="Map" unique_id=1274471557]
-transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, 31.852953, 7.3498335, -423.79626)
+transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, 31.852953, 7.3498335, -423.55078)
 use_collision = true
 size = Vector3(1, 17.410156, 0.94124985)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall" type="CSGBox3D" parent="Map" unique_id=1789800350]
-transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -1.1876485, 7.3498335, -191.06975)
+transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -1.2868193, 7.3498335, -191.06975)
 use_collision = true
-size = Vector3(1, 17.410156, 0.56393284)
+size = Vector3(1, 17.410156, 0.5630944)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall2" type="CSGBox3D" parent="Map" unique_id=1109345345]
-transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -8.853191, 7.3498335, -359.28067)
+transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -8.860784, 7.3498335, -355.43164)
 use_collision = true
-size = Vector3(1, 17.410156, 0.6280153)
+size = Vector3(1, 17.410156, 0.6279511)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="SideWallRight" type="CSGBox3D" parent="Map" unique_id=1773748055]
@@ -96,9 +96,9 @@ size = Vector3(1, 17.410156, 0.699646)
 material = SubResource("StandardMaterial3D_nfihu")
 
 [node name="SideWallRight3" type="CSGBox3D" parent="Map" unique_id=224162744]
-transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, 65.36864, 9.778316, -273.70172)
+transform = Transform3D(1, 0, 0, 0, 1.0749193, 0, 0, 0, 236.55516, 65.36864, 8.410457, -273.2722)
 use_collision = true
-size = Vector3(1, 17.410156, 0.699646)
+size = Vector3(1, 14.865112, 0.6960144)
 material = SubResource("StandardMaterial3D_nfihu")
 
 [node name="SideWallRight2" type="CSGBox3D" parent="Map" unique_id=2072612130]
@@ -158,18 +158,22 @@ material = SubResource("StandardMaterial3D_sbmf2")
 
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("11_ojkn5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.051838, 1.0039877, -141.87094)
+activation_size = Vector3(30, 5, 30)
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("11_ojkn5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.82673, 1.0039877, -141.94199)
 speed = 5.0
+activation_size = Vector3(30, 5, 30)
 
 [node name="Enemy3" parent="." unique_id=598032649 instance=ExtResource("11_ojkn5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.560234, 1.0039877, 13.648239)
 speed = 5.0
+activation_size = Vector3(50, 5, 50)
 
 [node name="Enemy4" parent="." unique_id=1276231111 instance=ExtResource("11_ojkn5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.560234, 1.0039877, -408.8219)
 speed = 5.0
+activation_size = Vector3(60, 5, 60)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
@@ -436,6 +440,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.7
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("15_lsxft")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -64.77057, 0.52748716, -421.57666)
+keys_needed = 4
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("16_rfqup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.946186, 0.99176514, -177.80612)
@@ -451,3 +456,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.74132, 0.99176466, -414.9
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("17_0y7c6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -65.53025, 8.427127, -421.7617)
+next_level = "res://scenes/levels/level4.tscn"
