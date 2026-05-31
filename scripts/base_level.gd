@@ -10,6 +10,7 @@ var timer := 0.0
 var last_player_pos = Vector3.ZERO
 @export var heuristic_type: AStarCustom.HeuristicType = AStarCustom.HeuristicType.EUCLIDEAN
 @export var enable_spot_light = true
+@export var enable_debug_visualizer: bool = false
 
 # Visualizer — spawned automatically, no scene edit needed
 var _visualizer: DebugVisualizer
@@ -27,6 +28,8 @@ func _ready():
 	_setup_visualizer()
 
 func _setup_visualizer() -> void:
+	if not enable_debug_visualizer:
+		return
 	_visualizer = DebugVisualizer.new()
 	add_child(_visualizer)
 
