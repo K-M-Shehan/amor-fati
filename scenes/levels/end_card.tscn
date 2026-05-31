@@ -1,26 +1,26 @@
-[gd_scene format=3 uid="uid://5wmufpxk1ixn"]
+[gd_scene format=3 uid="uid://rln3dcoxen36"]
 
-[ext_resource type="Script" uid="uid://dswbtmcm3pdh5" path="res://scripts/main_menu.gd" id="1_cn35j"]
-[ext_resource type="Texture2D" uid="uid://dr22lb8jkvcud" path="res://textures/title/a_title.png" id="1_fsby3"]
-[ext_resource type="Texture2D" uid="uid://cbyspum6hmfgm" path="res://textures/title/m_title_filled.png" id="2_sn5u3"]
-[ext_resource type="Texture2D" uid="uid://b5t1cbbjth5w4" path="res://textures/title/o_title.png" id="3_cn35j"]
-[ext_resource type="Texture2D" uid="uid://c6n0y3t3pad0a" path="res://textures/title/r_title.png" id="4_wko7x"]
-[ext_resource type="Texture2D" uid="uid://crxcvee3h402f" path="res://textures/title/f2_title.png" id="5_pwqr4"]
-[ext_resource type="Texture2D" uid="uid://bcog735f7w8ch" path="res://textures/title/a2_title.png" id="6_ohdsy"]
-[ext_resource type="Texture2D" uid="uid://ralgd4qyvdn6" path="res://textures/title/t2_title.png" id="7_fwnpy"]
-[ext_resource type="Texture2D" uid="uid://bu4sqjwegr76r" path="res://textures/title/i_title.png" id="8_k0nyb"]
+[ext_resource type="Script" uid="uid://dswbtmcm3pdh5" path="res://scripts/main_menu.gd" id="1_stxxr"]
+[ext_resource type="Texture2D" uid="uid://dr22lb8jkvcud" path="res://textures/title/a_title.png" id="2_kml7a"]
+[ext_resource type="Texture2D" uid="uid://cbyspum6hmfgm" path="res://textures/title/m_title_filled.png" id="3_52y3c"]
+[ext_resource type="Texture2D" uid="uid://b5t1cbbjth5w4" path="res://textures/title/o_title.png" id="4_r7dor"]
+[ext_resource type="Texture2D" uid="uid://c6n0y3t3pad0a" path="res://textures/title/r_title.png" id="5_sh743"]
+[ext_resource type="Texture2D" uid="uid://crxcvee3h402f" path="res://textures/title/f2_title.png" id="6_6e0cf"]
+[ext_resource type="Texture2D" uid="uid://bcog735f7w8ch" path="res://textures/title/a2_title.png" id="7_kgpeh"]
+[ext_resource type="Texture2D" uid="uid://ralgd4qyvdn6" path="res://textures/title/t2_title.png" id="8_8lc7b"]
+[ext_resource type="Texture2D" uid="uid://bu4sqjwegr76r" path="res://textures/title/i_title.png" id="9_ga541"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_all2k"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="MainMenu" type="Control" unique_id=116608454]
+[node name="EndCard" type="Control" unique_id=116608454]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cn35j")
+script = ExtResource("1_stxxr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1449198773]
 
@@ -46,20 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1724084368]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
-text = "Start"
-
-[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=666557401]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
-text = "Options"
-
 [node name="CreditsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1422211663]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -84,7 +70,7 @@ offset_left = -40.04001
 offset_top = -40.112015
 offset_right = 39.95999
 offset_bottom = 39.887985
-texture = ExtResource("1_fsby3")
+texture = ExtResource("2_kml7a")
 expand_mode = 2
 
 [node name="Letter2" type="TextureRect" parent="CanvasLayer" unique_id=1849728675]
@@ -97,7 +83,7 @@ offset_left = -39.72003
 offset_top = -40.104004
 offset_right = 40.27997
 offset_bottom = 39.895996
-texture = ExtResource("2_sn5u3")
+texture = ExtResource("3_52y3c")
 expand_mode = 2
 
 [node name="Letter3" type="TextureRect" parent="CanvasLayer" unique_id=1660612121]
@@ -110,7 +96,7 @@ offset_left = -39.552002
 offset_top = -39.832
 offset_right = 40.447998
 offset_bottom = 40.168
-texture = ExtResource("3_cn35j")
+texture = ExtResource("4_r7dor")
 expand_mode = 2
 
 [node name="Letter4" type="TextureRect" parent="CanvasLayer" unique_id=1945522126]
@@ -123,7 +109,7 @@ offset_left = -39.840027
 offset_top = -39.744003
 offset_right = 40.159973
 offset_bottom = 40.255997
-texture = ExtResource("4_wko7x")
+texture = ExtResource("5_sh743")
 expand_mode = 2
 
 [node name="Letter5" type="TextureRect" parent="CanvasLayer" unique_id=900994964]
@@ -136,7 +122,7 @@ offset_left = -39.920044
 offset_top = -40.09601
 offset_right = 40.079956
 offset_bottom = 39.90399
-texture = ExtResource("5_pwqr4")
+texture = ExtResource("6_6e0cf")
 expand_mode = 2
 
 [node name="Letter6" type="TextureRect" parent="CanvasLayer" unique_id=812050140]
@@ -149,7 +135,7 @@ offset_left = -39.600037
 offset_top = -40.199997
 offset_right = 40.399963
 offset_bottom = 39.800003
-texture = ExtResource("6_ohdsy")
+texture = ExtResource("7_kgpeh")
 expand_mode = 2
 
 [node name="Letter7" type="TextureRect" parent="CanvasLayer" unique_id=676006707]
@@ -162,7 +148,7 @@ offset_left = -40.496094
 offset_top = -39.95201
 offset_right = 39.503906
 offset_bottom = 40.04799
-texture = ExtResource("7_fwnpy")
+texture = ExtResource("8_8lc7b")
 expand_mode = 2
 
 [node name="Letter8" type="TextureRect" parent="CanvasLayer" unique_id=967808436]
@@ -175,10 +161,8 @@ offset_left = -40.24005
 offset_top = -39.832
 offset_right = 39.75995
 offset_bottom = 40.168
-texture = ExtResource("8_k0nyb")
+texture = ExtResource("9_ga541")
 expand_mode = 2
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

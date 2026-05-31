@@ -3,33 +3,41 @@
 [ext_resource type="Script" uid="uid://gvpg8fuw0tbw" path="res://scripts/player.gd" id="1_15tap"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cacbb"]
+radius = 0.36328125
+height = 1.7519531
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cacbb"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_15tap"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1911212463]
 script = ExtResource("1_15tap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1264690533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87597656, 0)
 shape = SubResource("CapsuleShape3D_cacbb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1725705784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_cacbb")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1270276316]
-transform = Transform3D(0.14389563, 0, 0, 0, 0.09256786, 0, 0, 0, 1, 0, 1.4435705, -0.4999885)
-mesh = SubResource("BoxMesh_15tap")
+[node name="Head" type="Node3D" parent="." unique_id=1300946192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4463938, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1274834256]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1274834256]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4055429, -0.39351442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.040850997, -0.39351442)
 
-[node name="InteractRay" type="RayCast3D" parent="Camera3D" unique_id=65215758]
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D" unique_id=65215758]
 target_position = Vector3(0, 0, -2)
 collide_with_areas = true
+
+[node name="Spotlight" type="Node3D" parent="Head/Camera3D" unique_id=707195348]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/Spotlight" unique_id=566824435]
+light_color = Color(1, 1, 0.67058825, 1)
+light_energy = 4.0
+light_volumetric_fog_energy = 0.1
+spot_range = 10.0
+spot_angle_attenuation = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1176259794]
 
@@ -51,14 +59,29 @@ vertical_alignment = 1
 
 [node name="InteractionLabel" type="Label" parent="CanvasLayer" unique_id=486449718]
 visible = false
-offset_left = 555.0
-offset_top = 622.0
-offset_right = 595.0
-offset_bottom = 645.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.89400005
+anchor_right = 0.5
+anchor_bottom = 0.89400005
+offset_left = -20.0
+offset_top = -11.312012
+offset_right = 20.0
+offset_bottom = 11.687988
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="KeyCounter" type="Label" parent="CanvasLayer" unique_id=1478450710]
-offset_left = 1077.0
-offset_top = 5.0
-offset_right = 1146.0
-offset_bottom = 28.0
-text = "Keys: 0/2"
+anchors_preset = -1
+anchor_left = 0.96300006
+anchor_top = 0.046000004
+anchor_right = 0.96300006
+anchor_bottom = 0.046000004
+offset_left = -34.3761
+offset_top = -11.808002
+offset_right = 34.6239
+offset_bottom = 11.191998
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Keys: 0"

@@ -12,9 +12,14 @@ func _ready():
 	add_to_group("enemies")
 	player = get_parent().get_node("Player")
 	$KillZone.body_entered.connect(_on_body_entered)
-	$ActivationZone.body_entered.connect(_on_activation_zone_entered)
 	# set the box size from the export var
-	$ActivationZone/CollisionShape3D.shape.size = activation_size
+	# duplicate the shape so each enemy has its own independent resource
+	var new_shape = BoxShape3D.new()
+	new_shape.size = activation_size
+	$ActivationZone/CollisionShape3D.shape = new_shape  # ← assign the new independent shape
+	# delay connecting activation zone until next frame
+	await get_tree().process_frame
+	$ActivationZone.body_entered.connect(_on_activation_zone_entered)
 	
 func _on_activation_zone_entered(body):
 	if body.name == "Player":
@@ -35,6 +40,8 @@ func get_terrain_speed() -> float:
 	return speed
 	
 func set_path(p: Array, graph: Graph):
+	if not is_active:  # ignores inactive enemies but still does work
+		return
 	# only update if new path is different
 	if p.size() == 0:
 		return
@@ -70,17 +77,21 @@ func get_lookahead_target():
 	var index = min(lookahead_steps, path.size() - 1)
 	return path[index]
 
+var _los_timer: float = 0.0
+var _los_result: bool = false
+
 func has_line_of_sight() -> bool:
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(
-		global_position,
-		player.global_position
-	)
-	# Exclude this enemy from the raycast
-	query.exclude = [self]
-	var result = space_state.intersect_ray(query)
-	# If nothing was hit, or what was hit is the player, we have LOS
-	return result.is_empty() or result.collider == player
+	_los_timer -= get_physics_process_delta_time()
+	if _los_timer <= 0.0:
+		_los_timer = 0.1  # check 10 times per second instead of 60
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
+		# Exclude this enemy from the raycast
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)
+		# If nothing was hit, or what was hit is the player, we have LOS
+		_los_result = result.is_empty() or result.collider == player
+	return _los_result
 	
 func _physics_process(delta):
 	if not is_active:	# do nothing if not yet activated

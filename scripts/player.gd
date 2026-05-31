@@ -1,17 +1,23 @@
 extends CharacterBody3D
 
 var level_graph: Graph = null
-var has_key = false
 var is_dead = false
-@onready var ray = $Camera3D/InteractRay
+
+# bob variables
+const BOB_FREQ = 2.0
+const BOB_AMP = 0.08
+var t_bob = 0.0
+
+@onready var head = $Head
+@onready var camera = %Camera3D
+@onready var ray = $Head/Camera3D/InteractRay
 @onready var ui_label = $"CanvasLayer/InteractionLabel"
 @onready var key_ui = $"CanvasLayer/KeyCounter"
 
 func update_ui():
-	key_ui.text = "Keys: %d/%d" % [keys_collected, total_keys]
+	key_ui.text = "Keys: %d" % [keys_collected]
 
 var keys_collected = 0
-var total_keys = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # removes pointer from game
@@ -53,10 +59,20 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 7
+	
+	# head bob
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob) # don't change this to head, your device will spontaneously combust
 		
 	move_and_slide()
 	
 	handle_interaction()
+	
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	return pos
 	
 func get_terrain_speed() -> float:
 	if level_graph == null:
@@ -73,8 +89,6 @@ func get_terrain_speed() -> float:
 	
 func collect_key():
 	keys_collected += 1
-	has_key = keys_collected >= total_keys
-
 	update_ui()
 	
 func handle_interaction():
