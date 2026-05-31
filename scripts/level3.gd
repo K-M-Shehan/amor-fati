@@ -70,13 +70,27 @@ func trigger_barricade(world_pos: Vector3) -> void:
 func recalculate_path() -> void:
 	var crates = get_tree().get_nodes_in_group("crates")
 	var puddles = get_tree().get_nodes_in_group("holy_water_puddles")
-	
-	# Any active blocker in the scene forces graph-only pathfinding
+
 	var any_blocking = false
+
+	# Only force graph mode if a crate is between an enemy and the player
 	for crate in crates:
-		if crate.is_blocking:
-			any_blocking = true
+		if not crate.is_blocking:
+			continue
+		# Check if any enemy's straight line to player passes near the blocked node
+		for enemy in get_tree().get_nodes_in_group("enemies"):
+			var enemy_to_player = player.global_position - enemy.global_position
+			var enemy_to_crate  = crate.global_position  - enemy.global_position
+			var t = enemy_to_crate.dot(enemy_to_player) / max(enemy_to_player.length_squared(), 0.001)
+			t = clamp(t, 0.0, 1.0)
+			var closest = enemy.global_position + enemy_to_player * t
+			if closest.distance_to(crate.global_position) < 6.0:
+				any_blocking = true
+				break
+		if any_blocking:
 			break
+
+	# Holy water always forces graph mode while active
 	if puddles.size() > 0:
 		any_blocking = true
 

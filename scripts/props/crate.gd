@@ -9,17 +9,22 @@ var is_blocking: bool = false   # true only when actively sitting on a node
 
 func _ready() -> void:
 	add_to_group("crates")
-	# Walk up the tree to find the level
-	var node = get_parent()
+	# Search all the way up the tree until we find BaseLevel
+	var node = self
 	while node != null:
 		if node is BaseLevel:
 			_level = node
 			break
 		node = node.get_parent()
-	# Block the starting node immediately
-	if _level != null:
-		_last_block_pos = global_position + Vector3(999, 0, 0)  # force first update
-		_update_blocked_node()
+	if _level == null:
+		push_error("Crate could not find a BaseLevel in the scene tree!")
+		return
+
+	# Block the starting node immediately after the graph is built
+	await get_tree().process_frame
+	await get_tree().process_frame   # wait 2 frames — graph builds on frame 1 in base_level
+	_last_block_pos = global_position + Vector3(999, 0, 0)
+	_update_blocked_node()
 
 func _physics_process(delta: float) -> void:
 	_check_timer += delta
@@ -37,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	_update_blocked_node()
 
 func _update_blocked_node() -> void:
-	var graph = _level.builder.graph
 	var new_node_id = _level.get_closest_node_id(global_position)
 
 	# Nothing changed
