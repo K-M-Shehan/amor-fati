@@ -68,8 +68,16 @@ func trigger_barricade(world_pos: Vector3) -> void:
 	puddle.setup(node_id, self, 8.0)
 
 func recalculate_path() -> void:
-	# If any push box exists in the level, force enemies onto graph
-	var boxes = get_tree().get_nodes_in_group("crates")
+	var crates = get_tree().get_nodes_in_group("crates")
+	
+	# Check if any crate is actually blocking a node
+	var any_blocking = false
+	for crate in crates:
+		if crate.is_blocking:
+			any_blocking = true
+			break
+
 	for enemy in get_tree().get_nodes_in_group("enemies"):
-		enemy.force_graph_path = boxes.size() > 0
+		enemy.force_graph_path = any_blocking
+
 	super.recalculate_path()
