@@ -101,16 +101,28 @@ func _physics_process(delta):
 	var dist_to_player = global_position.distance_to(player.global_position)
 	var target
 
-	# Close/medium range: chase directly if we can see the player
-	if dist_to_player < 20.0 and has_line_of_sight() and not force_graph_path:
-		target = player.global_position
-	# Far away or LOS blocked: follow the nav graph
-	else:
+	if force_graph_path:
+		# Barricade is active — follow graph strictly
+		# But if path is exhausted and we're close, do final direct approach
 		var next_node = get_lookahead_target()
 		if next_node != null:
 			target = next_node
-		else:
+		elif dist_to_player < 6.0:
+			# Path exhausted and close enough — safe to go direct
 			target = player.global_position
+		else:
+			# Path exhausted but far away — wait for recalculation
+			target = global_position  # stand still briefly
+	else:
+		# Normal behaviour — direct chase when close + LOS
+		if dist_to_player < 20.0 and has_line_of_sight():
+			target = player.global_position
+		else:
+			var next_node = get_lookahead_target()
+			if next_node != null:
+				target = next_node
+			else:
+				target = player.global_position
 
 	# Movement direction
 	var dir = (target - global_position).normalized()
