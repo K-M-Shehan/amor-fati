@@ -478,7 +478,7 @@ radius = 1.9243164
 height = 4.0200195
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4i4j6"]
-size = Vector3(10, 5, 1)
+size = Vector3(10, 5, 10)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1058857341]
 script = ExtResource("1_7p1mj")
@@ -547,5 +547,5 @@ shape = SubResource("CapsuleShape3D_4i4j6")
 [node name="ActivationZone" type="Area3D" parent="." unique_id=2020586898]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationZone" unique_id=944896643]
-transform = Transform3D(8.271964, 0, 0, 0, 0.9529292, 0, 0, 0, 52.593666, -0.7228446, 3.1768475, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7073598, 0)
 shape = SubResource("BoxShape3D_4i4j6")
