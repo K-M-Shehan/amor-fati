@@ -99,9 +99,9 @@ size = Vector3(1, 17.410156, 0.8530724)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="BackWall" type="CSGBox3D" parent="Map" unique_id=2059875774]
-transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, 32.845917, 11.469549, 28.372337)
+transform = Transform3D(-4.371139e-08, 0, 236.55516, 0, 1.0749193, 0, -1, 0, -1.0340154e-05, -23.23869, 11.469549, 28.37234)
 use_collision = true
-size = Vector3(1, 25.075317, 0.851676)
+size = Vector3(1, 25.075317, 0.37749815)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="BackWall2" type="CSGBox3D" parent="Map" unique_id=1274471557]
@@ -138,6 +138,24 @@ material = SubResource("StandardMaterial3D_nfihu")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 105.79297, 12.666127, -71.31255)
 use_collision = true
 size = Vector3(0.5, 24.99437, 55.185867)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SectionCBottomWall5" type="CSGBox3D" parent="Map" unique_id=1768250370]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 105.79225, 13.473199, 28.167206)
+use_collision = true
+size = Vector3(0.5, 26.608513, 55.187294)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SectionCBottomWall7" type="CSGBox3D" parent="Map" unique_id=485113619]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 77.54664, 14.638647, 28.167204)
+use_collision = true
+size = Vector3(0.5, 24.277617, 3.2029772)
+material = SubResource("StandardMaterial3D_nfihu")
+
+[node name="SectionCBottomWall6" type="CSGBox3D" parent="Map" unique_id=2081824860]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 48.956543, 13.473199, 28.167206)
+use_collision = true
+size = Vector3(0.5, 26.608513, 56.111305)
 material = SubResource("StandardMaterial3D_nfihu")
 
 [node name="SectionCBottomWall3" type="CSGBox3D" parent="Map" unique_id=896686650]
@@ -2058,20 +2076,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.076456, 5.03, 21.783)
 [node name="Enemy" parent="." unique_id=1058857341 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2877, 1.0039877, -167.96468)
 speed = 5.0
+activation_size = Vector3(20, 5, 20)
 
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 125.51551, 8.092167, -162.0912)
 speed = 5.0
-activation_size = Vector3(5, 3, 1)
+activation_size = Vector3(20, 5, 20)
 
 [node name="Enemy3" parent="." unique_id=598032649 instance=ExtResource("11_w1hcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.560234, 1.0039877, 13.648239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.20999, 1.0039877, -26.738464)
 speed = 5.0
+activation_size = Vector3(20, 5, 20)
 
 [node name="Enemy4" parent="." unique_id=1276231111 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 124.560234, 8.152632, -82.22635)
 speed = 5.0
-activation_size = Vector3(5, 3, 1)
+activation_size = Vector3(20, 5, 20)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
@@ -2280,7 +2300,8 @@ id = 16
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.809727, 0.41608894, -50.986145)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
-transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)
+transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, 88.207436, 18.463215, 19.762909)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
 environment = SubResource("Environment_irrt8")
@@ -2298,32 +2319,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, -98.055
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.97997, 0.73711616, -80.464516)
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("15_hxr3b")]
-transform = Transform3D(1, 0, 1.0133184e-07, 0, 1, 0, -1.0133184e-07, 0, 1, 77.58154, 0.5287249, -69.04116)
-final_Door = true
+transform = Transform3D(1, 0, 1.0133184e-07, 0, 1, 0, -1.0133184e-07, 0, 1, 77.58154, 0.5287249, 28.060444)
+keys_needed = 5
 
 [node name="Door2" parent="." unique_id=730589231 instance=ExtResource("15_hxr3b")]
 transform = Transform3D(1, 0, 1.0133184e-07, 0, 1, 0, -1.0133184e-07, 0, 1, 77.58154, 7.581294, -71.28923)
+keys_needed = 4
 
 [node name="SectionBDoor" parent="." unique_id=835417121 instance=ExtResource("15_hxr3b")]
 transform = Transform3D(-1, 0, -1.3909066e-08, 0, 1, 0, 1.3909066e-08, 0, -1, 20.882442, 0.52748716, -70.87357)
+keys_needed = 3
 
 [node name="SectionADoor" parent="." unique_id=785916523 instance=ExtResource("15_hxr3b")]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -57.397285, 0.52748716, 22.86052)
+keys_needed = 1
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("16_cdy06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.490017, 0.99176514, -141.7227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.0821, 0.99176514, -146.02231)
 
 [node name="Key2" parent="." unique_id=1245538429 instance=ExtResource("16_cdy06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.70715, 0.99176466, 20.13636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8049316, 0.99176466, -28.530273)
 
 [node name="Key3" parent="." unique_id=1046211851 instance=ExtResource("16_cdy06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.534477, 0.99176466, -137.70647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.03592, 0.99176466, -58.47425)
 
 [node name="Key4" parent="." unique_id=453619178 instance=ExtResource("16_cdy06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.74132, 0.99176466, -120.82797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.74132, 8.306122, -122.383896)
+
+[node name="Key5" parent="." unique_id=184273969 instance=ExtResource("16_cdy06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.56118, 1.1668491, -11.12529)
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("17_2c5pw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 44.604805, 8.427127, -46.20746)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 79.79606, 4.3515196, 28.66569)
 
 [node name="LightManager" type="Node3D" parent="." unique_id=815455177 node_paths=PackedStringArray("player")]
 script = ExtResource("14_w24lh")
