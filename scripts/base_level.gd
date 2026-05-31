@@ -3,11 +3,13 @@ class_name BaseLevel
 
 @onready var builder = $Graph_builder
 @onready var player = $Player
+@onready var spotlight = $Player/Head/Camera3D/Spotlight
 var astar
 var bfs
 var timer := 0.0
 var last_player_pos = Vector3.ZERO
 @export var heuristic_type: AStarCustom.HeuristicType = AStarCustom.HeuristicType.EUCLIDEAN
+@export var enable_spot_light = true
 
 func _ready():
 	await get_tree().process_frame
@@ -16,6 +18,7 @@ func _ready():
 	astar.heuristic_type = heuristic_type
 	bfs = BFS.new(builder.graph)
 	player.level_graph = builder.graph
+	spotlight.visible = enable_spot_light
 	for e in get_tree().get_nodes_in_group("enemies"):
 		e.level_graph = builder.graph
 
