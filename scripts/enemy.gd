@@ -77,17 +77,21 @@ func get_lookahead_target():
 	var index = min(lookahead_steps, path.size() - 1)
 	return path[index]
 
+var _los_timer: float = 0.0
+var _los_result: bool = false
+
 func has_line_of_sight() -> bool:
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(
-		global_position,
-		player.global_position
-	)
-	# Exclude this enemy from the raycast
-	query.exclude = [self]
-	var result = space_state.intersect_ray(query)
-	# If nothing was hit, or what was hit is the player, we have LOS
-	return result.is_empty() or result.collider == player
+	_los_timer -= get_physics_process_delta_time()
+	if _los_timer <= 0.0:
+		_los_timer = 0.1  # check 10 times per second instead of 60
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
+		# Exclude this enemy from the raycast
+		query.exclude = [self]
+		var result = space_state.intersect_ray(query)
+		# If nothing was hit, or what was hit is the player, we have LOS
+		_los_result = result.is_empty() or result.collider == player
+	return _los_result
 	
 func _physics_process(delta):
 	if not is_active:	# do nothing if not yet activated
