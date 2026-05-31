@@ -12,9 +12,14 @@ func _ready():
 	add_to_group("enemies")
 	player = get_parent().get_node("Player")
 	$KillZone.body_entered.connect(_on_body_entered)
-	$ActivationZone.body_entered.connect(_on_activation_zone_entered)
 	# set the box size from the export var
-	$ActivationZone/CollisionShape3D.shape.size = activation_size
+	# duplicate the shape so each enemy has its own independent resource
+	var new_shape = BoxShape3D.new()
+	new_shape.size = activation_size
+	$ActivationZone/CollisionShape3D.shape = new_shape  # ← assign the new independent shape
+	# delay connecting activation zone until next frame
+	await get_tree().process_frame
+	$ActivationZone.body_entered.connect(_on_activation_zone_entered)
 	
 func _on_activation_zone_entered(body):
 	if body.name == "Player":
