@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://e2nq1hssm87x"]
+
+[ext_resource type="Texture2D" uid="uid://8443bgqdm253" path="res://textures/box_tex.jpg" id="1_c2erc"]
+[ext_resource type="Script" uid="uid://jjo2rt3gkep3" path="res://scripts/props/crate.gd" id="1_yyq4m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rinjm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yyq4m"]
+albedo_texture = ExtResource("1_c2erc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ou5ok"]
+material = SubResource("StandardMaterial3D_yyq4m")
+
+[node name="Crate" type="RigidBody3D" unique_id=475476101]
+linear_damp = 3.0
+angular_damp = 5.0
+script = ExtResource("1_yyq4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=567227215]
+shape = SubResource("BoxShape3D_rinjm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1167121765]
+mesh = SubResource("BoxMesh_ou5ok")
