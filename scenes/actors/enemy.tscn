@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://do4xoc2e2hhj8"]
 
 [ext_resource type="Script" uid="uid://c1coohby5v2v3" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="AudioStream" uid="uid://bb8uts5eg6fmj" path="res://assets/sound/enemy_activation.wav" id="2_qkj82"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjjxi"]
 resource_name = "Material.001"
@@ -815,8 +816,6 @@ size = Vector3(10, 5, 10)
 [node name="Enemy" type="CharacterBody3D" unique_id=1058857341]
 collision_layer = 2
 script = ExtResource("1_7p1mj")
-speed = null
-activation_size = null
 
 [node name="golem" type="Node3D" parent="." unique_id=1584399498]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8417835e-05, -1.5381979, -0.12172413)
@@ -924,3 +923,6 @@ shape = SubResource("CapsuleShape3D_4i4j6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationZone" unique_id=944896643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7073598, 0)
 shape = SubResource("BoxShape3D_4i4j6")
+
+[node name="ActivationSound" type="AudioStreamPlayer" parent="." unique_id=1113725318]
+stream = ExtResource("2_qkj82")

@@ -8,6 +8,9 @@ var rotation_speed = 5.0
 var is_active: bool = false # enemy starts idle
 @export var activation_size: Vector3 = Vector3(10.0, 5.0, 1.0)
 var force_graph_path: bool = false
+var has_activated := false
+
+@onready var _activation_sound = $ActivationSound
 
 # Procedural animation
 var _bob_timer: float = 0.0
@@ -114,9 +117,19 @@ func _ready():
 		push_warning("Enemy: could not find golem node")
 	
 func _on_activation_zone_entered(body):
-	if body.name == "Player":
-		is_active = true
-		print("Enemy activated!")
+	if has_activated:
+		return
+
+	if body.name != "Player":
+		return
+
+	has_activated = true
+	is_active = true
+
+	if _activation_sound:
+		_activation_sound.play()
+
+	print("Enemy activated!")
 
 func get_terrain_speed() -> float:
 	if level_graph == null:
