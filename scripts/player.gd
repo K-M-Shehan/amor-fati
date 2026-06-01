@@ -30,12 +30,13 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
+		var sens = SaveManager.mouse_sensitivity
 		# rotate around y axis
 		# for sensitivity when rotating, we multiply or divide the below assigned value
-		rotation_degrees.y -= event.relative.x * 0.5 # can also be / 2.0 instead of * 0.5
+		rotation_degrees.y -= event.relative.x * sens # can also be / 2.0 instead of * 0.5
 		
 		# rotate around x axis (we will be rotating the camera here not the whole character like we did earlier)
-		%Camera3D.rotation_degrees.x -= event.relative.y / 5.0 # same as multiplying by 0.2
+		%Camera3D.rotation_degrees.x -= event.relative.y / sens # same as multiplying by 0.2
 		
 		# limit camera rotation in the x axis 
 		%Camera3D.rotation_degrees.x = clamp(

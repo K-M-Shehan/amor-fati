@@ -831,5 +831,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.67436, 0.99176466, 22.264
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_grqcv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.93018, 8.427127, -190.75664)
 next_level = "res://scenes/levels/level3.tscn"
+this_level_number = 2
 
 [node name="PauseMenu" parent="." unique_id=290709426 instance=ExtResource("21_bxuut")]
