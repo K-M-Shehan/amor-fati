@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="10_yc51k"]
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="11_ojkn5"]
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="12_6vxnv"]
+[ext_resource type="PackedScene" uid="uid://by3t1si20h0um" path="res://scenes/environment/pillar_1.tscn" id="12_022ip"]
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="13_flme0"]
 [ext_resource type="PackedScene" uid="uid://6uqu0s71wj2t" path="res://scenes/props/spike.tscn" id="14_0qxt0"]
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="15_lsxft"]
@@ -91,6 +92,7 @@ material = SubResource("StandardMaterial3D_5ntmo")
 
 [node name="Ceiling" type="CSGBox3D" parent="Map" unique_id=301995889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.25464, 5.305771, -197.39319)
+visible = false
 use_collision = true
 size = Vector3(198.7876, 1.0889893, 450.69556)
 material = SubResource("StandardMaterial3D_022ip")
@@ -213,6 +215,33 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -57.56653, -9.4466095, -15
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.292175, 0.013203859, -73.37745)
 size = Vector3(23.560375, 1, 25.318727)
 material = SubResource("StandardMaterial3D_sbmf2")
+
+[node name="Ring" type="Node3D" parent="Map" unique_id=119182206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4530487, 0, -55.075928)
+
+[node name="Pillar1" parent="Map/Ring" unique_id=441336217 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 90, 2.378, -305.962)
+
+[node name="Pillar5" parent="Map/Ring" unique_id=1113831637 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 90, 2.378, -295.9623)
+
+[node name="Pillar2" parent="Map/Ring" unique_id=288907690 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 100, 2.378, -288.861)
+
+[node name="Pillar8" parent="Map/Ring" unique_id=1985552838 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 100, 2.378, -313.37228)
+
+[node name="Pillar3" parent="Map/Ring" unique_id=1691412645 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110, 2.378, -288.861)
+
+[node name="Pillar7" parent="Map/Ring" unique_id=586576886 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110, 2.378, -313.59824)
+
+[node name="Pillar4" parent="Map/Ring" unique_id=1586281037 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 120, 2.378, -293.87256)
+
+[node name="Pillar6" parent="Map/Ring" unique_id=1590840512 instance=ExtResource("12_022ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 120, 2.378, -305.962)
 
 [node name="Graph_builder" parent="." unique_id=1130732037 instance=ExtResource("10_yc51k")]
 
