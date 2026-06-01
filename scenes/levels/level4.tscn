@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://muhrh3e5duig" path="res://scenes/environment/pillar_6.tscn" id="16_y3vdi"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="17_2c5pw"]
 [ext_resource type="PackedScene" uid="uid://by3t1si20h0um" path="res://scenes/environment/pillar_1.tscn" id="17_irrt8"]
+[ext_resource type="PackedScene" uid="uid://ddn3t6asevbjq" path="res://scenes/environment/sound_trigger.tscn" id="18_irrt8"]
+[ext_resource type="AudioStream" uid="uid://bd26q0vettln7" path="res://assets/sound/effects/scare1.wav" id="19_ev8xs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_tsmbm")
@@ -2394,3 +2396,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 73.14378, 6.069438, -112.584)
 
 [node name="Pillar1" parent="." unique_id=441336217 instance=ExtResource("17_irrt8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.72483, 8.57825, -128.76418)
+
+[node name="SoundTrigger" parent="." unique_id=61336191 instance=ExtResource("18_irrt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.4, 1.2934556, 21.852032)
+sound = ExtResource("19_ev8xs")
