@@ -2088,7 +2088,7 @@ activation_size = Vector3(20, 5, 20)
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 125.51551, 8.092167, -162.0912)
 speed = 5.0
-activation_size = Vector3(40, 5, 40)
+activation_size = Vector3(30, 5, 30)
 
 [node name="Enemy3" parent="." unique_id=598032649 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.20999, 1.0039877, -26.738464)
@@ -2098,7 +2098,7 @@ activation_size = Vector3(30, 5, 30)
 [node name="Enemy4" parent="." unique_id=1276231111 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 124.560234, 8.152632, -82.22635)
 speed = 5.0
-activation_size = Vector3(40, 5, 40)
+activation_size = Vector3(30, 5, 30)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
@@ -2349,6 +2349,7 @@ footstep_sound = ExtResource("10_y3vdi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, 88.207436, 18.463215, 19.762909)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
 environment = SubResource("Environment_irrt8")

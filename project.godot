@@ -15,6 +15,10 @@ run/main_scene="uid://5wmufpxk1ixn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SaveManager="*res://scripts/save_manager.gd"
+
 [input]
 
 move_left={
@@ -75,7 +79,3 @@ pause={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
-
-[autoload]
-
-SaveManager="*res://scripts/save_manager.gd"
