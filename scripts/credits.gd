@@ -12,8 +12,7 @@ extends Control
 ]
 
 @onready var buttons = [
-	$CanvasLayer/VBoxContainer/StartButton,
-	$CanvasLayer/VBoxContainer/CreditsButton,
+	$CanvasLayer/VBoxContainer/BackButton,
 	$CanvasLayer/VBoxContainer/ExitButton,
 ]
 
@@ -43,11 +42,8 @@ func reveal_buttons():
 		tween.tween_property(button, "modulate:a", 1.0, 0.2)
 		await tween.finished
 
-func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
-
 func _on_credits_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/credits.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

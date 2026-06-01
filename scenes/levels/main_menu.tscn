@@ -53,13 +53,6 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=666557401]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
-text = "Options"
-
 [node name="CreditsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1422211663]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -179,6 +172,5 @@ texture = ExtResource("8_k0nyb")
 expand_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
