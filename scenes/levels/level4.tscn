@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2yjk17pmicjn" path="res://scenes/props/ceiling_light.tscn" id="5_f62st"]
 [ext_resource type="PackedScene" uid="uid://dwp2nc0y8keo" path="res://scenes/environment/slope.tscn" id="6_5sfmg"]
 [ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="10_1wpw8"]
+[ext_resource type="AudioStream" uid="uid://btwi5no1ekdgg" path="res://assets/sound/footsteps-lvl4.wav" id="10_y3vdi"]
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="11_w1hcc"]
 [ext_resource type="PackedScene" uid="uid://cc7sj0nq1ldvc" path="res://scenes/waypoint.tscn" id="12_ph4mq"]
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="13_npa1m"]
@@ -16,6 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://muhrh3e5duig" path="res://scenes/environment/pillar_6.tscn" id="16_y3vdi"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="17_2c5pw"]
 [ext_resource type="PackedScene" uid="uid://by3t1si20h0um" path="res://scenes/environment/pillar_1.tscn" id="17_irrt8"]
+[ext_resource type="PackedScene" uid="uid://ddn3t6asevbjq" path="res://scenes/environment/sound_trigger.tscn" id="18_irrt8"]
+[ext_resource type="AudioStream" uid="uid://bd26q0vettln7" path="res://assets/sound/effects/scare1.wav" id="19_ev8xs"]
+[ext_resource type="PackedScene" uid="uid://btu2egwj6vpg3" path="res://scenes/environment/pillar_5.tscn" id="20_7kkoh"]
+[ext_resource type="PackedScene" uid="uid://dso3lsotcpfjr" path="res://scenes/environment/pillar_4.tscn" id="21_m1gbu"]
+[ext_resource type="PackedScene" uid="uid://dlc3nhfy7unp5" path="res://scenes/environment/pillar_3.tscn" id="22_yw4fb"]
+[ext_resource type="PackedScene" uid="uid://bavm33kxcba3" path="res://scenes/environment/pillar_2.tscn" id="23_1wpw8"]
+[ext_resource type="PackedScene" uid="uid://cvl4jqitxl75p" path="res://scenes/levels/pause_menu.tscn" id="24_m1gbu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_tsmbm")
@@ -2080,7 +2088,7 @@ activation_size = Vector3(20, 5, 20)
 [node name="Enemy2" parent="." unique_id=1174770741 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 125.51551, 8.092167, -162.0912)
 speed = 5.0
-activation_size = Vector3(20, 5, 20)
+activation_size = Vector3(40, 5, 40)
 
 [node name="Enemy3" parent="." unique_id=598032649 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.20999, 1.0039877, -26.738464)
@@ -2090,7 +2098,7 @@ activation_size = Vector3(30, 5, 30)
 [node name="Enemy4" parent="." unique_id=1276231111 instance=ExtResource("11_w1hcc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 124.560234, 8.152632, -82.22635)
 speed = 5.0
-activation_size = Vector3(20, 5, 20)
+activation_size = Vector3(40, 5, 40)
 
 [node name="Waypoints" type="Node3D" parent="." unique_id=185346247]
 visible = false
@@ -2337,10 +2345,10 @@ id = 16
 
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("13_npa1m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.809727, 0.41608894, -50.986145)
+footstep_sound = ExtResource("10_y3vdi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, 88.207436, 18.463215, 19.762909)
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=885278332]
 environment = SubResource("Environment_irrt8")
@@ -2371,14 +2379,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8049316, 0.99176466, -28.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.03592, 0.99176466, -58.47425)
 
 [node name="Key4" parent="." unique_id=453619178 instance=ExtResource("16_cdy06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.74132, 8.306122, -122.383896)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 119.13892, 9.83038, -120.581276)
 
 [node name="Key5" parent="." unique_id=184273969 instance=ExtResource("16_cdy06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.56118, 1.1668491, -11.12529)
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("17_2c5pw")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 79.79606, 4.3515196, 28.66569)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 77.73715, 4.3515196, 28.941147)
 next_level = "res://scenes/levels/end_card.tscn"
+this_level_number = 4
 
 [node name="LightManager" type="Node3D" parent="." unique_id=815455177 node_paths=PackedStringArray("player")]
 script = ExtResource("14_w24lh")
@@ -2388,7 +2397,89 @@ player = NodePath("../Player")
 transform = Transform3D(47.973816, 0, 0, 0, 7.2196293, 0, 0, 0, 100.15029, 45.160484, 3.9405127, -121.22383)
 
 [node name="Pillar6" parent="." unique_id=584479852 instance=ExtResource("16_y3vdi")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 73.14378, 6.069438, -112.584)
+transform = Transform3D(1.2258416, 0, 1.5802886, 0, 2, 0, -1.5802886, 0, 1.2258416, 96.90458, 6.069438, -149.67188)
 
 [node name="Pillar1" parent="." unique_id=441336217 instance=ExtResource("17_irrt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.72483, 8.57825, -128.76418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.18412, 8.57825, -87.44938)
+
+[node name="Pillar4" parent="." unique_id=313684318 instance=ExtResource("17_irrt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.31705, 8.57825, -157.65157)
+
+[node name="Pillar7" parent="." unique_id=1840009993 instance=ExtResource("17_irrt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.31705, 8.57825, -165.89925)
+
+[node name="Pillar2" parent="." unique_id=148315923 instance=ExtResource("17_irrt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.18412, 8.57825, -77.14273)
+
+[node name="SoundTrigger" parent="." unique_id=61336191 instance=ExtResource("18_irrt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.4, 1.2934556, 21.852032)
+sound = ExtResource("19_ev8xs")
+
+[node name="Pillar5" parent="." unique_id=496580720 instance=ExtResource("20_7kkoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.91385, 7.3670063, -101.389046)
+
+[node name="Hall" type="Node3D" parent="." unique_id=1530982059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.75602, 7.329777, -130.4747)
+
+[node name="Pillar4" parent="Hall" unique_id=2080625445 instance=ExtResource("21_m1gbu")]
+
+[node name="Pillar11" parent="Hall" unique_id=70880998 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.780998)
+
+[node name="Pillar7" parent="Hall" unique_id=1231452671 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85569, 0, 0)
+
+[node name="Pillar10" parent="Hall" unique_id=1930591836 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85569, 0, 19.1335)
+
+[node name="Pillar8" parent="Hall" unique_id=1373498753 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.599907, 0, 0)
+
+[node name="Pillar9" parent="Hall" unique_id=1074962348 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.599907, 0, 19.00663)
+
+[node name="Hall2" type="Node3D" parent="." unique_id=1535540337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.87589, 7.329777, -130.4747)
+
+[node name="Pillar4" parent="Hall2" unique_id=702274144 instance=ExtResource("21_m1gbu")]
+
+[node name="Pillar11" parent="Hall2" unique_id=2052504504 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.780998)
+
+[node name="Pillar7" parent="Hall2" unique_id=1710947904 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85569, 0, 0)
+
+[node name="Pillar10" parent="Hall2" unique_id=1998349260 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85569, 0, 19.1335)
+
+[node name="Pillar8" parent="Hall2" unique_id=2141123667 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.599907, 0, 0)
+
+[node name="Pillar9" parent="Hall2" unique_id=455863031 instance=ExtResource("21_m1gbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.599907, 0, 19.00663)
+
+[node name="Pillar3" parent="." unique_id=1626726516 instance=ExtResource("22_yw4fb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 90.696465, 8.024044, -121.07293)
+
+[node name="Altar" parent="." unique_id=1272273867 instance=ExtResource("23_1wpw8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 118.09288, 4.3358645, -120.6437)
+
+[node name="Pillar8" parent="." unique_id=855185016 instance=ExtResource("17_irrt8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 110.12904, 9.581512, -147.91031)
+
+[node name="Pillar9" parent="." unique_id=40301557 instance=ExtResource("16_y3vdi")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 116.032104, 6.191294, -161.19356)
+
+[node name="Pillar10" parent="." unique_id=190180454 instance=ExtResource("23_1wpw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.78308, 8.828165, -99.36951)
+
+[node name="Pillar11" parent="." unique_id=1067746867 instance=ExtResource("16_y3vdi")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 77.60403, 5.207712, -76.13676)
+
+[node name="Pillar12" parent="." unique_id=1792656582 instance=ExtResource("16_y3vdi")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 85.19188, 5.207712, -76.13676)
+
+[node name="Pillar13" parent="." unique_id=202014006 instance=ExtResource("16_y3vdi")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 77.578316, 4.347692, -83.86963)
+
+[node name="PauseMenu" parent="." unique_id=290709426 instance=ExtResource("24_m1gbu")]

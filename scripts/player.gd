@@ -8,6 +8,12 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
+@export var footstep_sound: AudioStream = null
+
+@onready var _footstep_player = $FootstepPlayer
+var _footstep_timer: float = 0.0
+var _footstep_interval: float = 0.50   # seconds between steps — tune to match animation
+
 @onready var head = $Head
 @onready var camera = %Camera3D
 @onready var ray = $Head/Camera3D/InteractRay
@@ -24,19 +30,25 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
+		var sens = SaveManager.mouse_sensitivity
 		# rotate around y axis
 		# for sensitivity when rotating, we multiply or divide the below assigned value
-		rotation_degrees.y -= event.relative.x * 0.5 # can also be / 2.0 instead of * 0.5
+		rotation_degrees.y -= event.relative.x * sens # can also be / 2.0 instead of * 0.5
 		
 		# rotate around x axis (we will be rotating the camera here not the whole character like we did earlier)
-		%Camera3D.rotation_degrees.x -= event.relative.y / 5.0 # same as multiplying by 0.2
+		%Camera3D.rotation_degrees.x -= event.relative.y / sens # same as multiplying by 0.2
 		
 		# limit camera rotation in the x axis 
 		%Camera3D.rotation_degrees.x = clamp(
 			%Camera3D.rotation_degrees.x, -80.0, 80.0
 		)
-	elif event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # mouse comes back when esc is pressed
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			# Only recapture if game is not paused
+			if not get_tree().paused:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	var SPEED = get_terrain_speed()
@@ -77,6 +89,7 @@ func _physics_process(delta):
 
 			body.apply_impulse(force * 2.5)
 	
+	_handle_footsteps(delta)
 	handle_interaction()
 	
 func _headbob(time) -> Vector3:
@@ -143,6 +156,31 @@ func handle_interaction():
 
 	ui_label.visible = false
 
+func _get_footstep_interval() -> float:
+	var spd = get_terrain_speed()
+	if spd < 3.0:
+		return 1.00   # mud — slow heavy steps
+	elif spd < 4.5:
+		return 0.80   # water — slightly slower
+	return 0.50       # normal
+
+func _handle_footsteps(delta: float) -> void:
+	# Only play when moving on the ground
+	var is_moving = Vector2(velocity.x, velocity.z).length() > 0.5
+	if not is_moving or not is_on_floor():
+		_footstep_timer = 0.0
+		return
+
+	_footstep_timer -= delta
+	if _footstep_timer <= 0.0:
+		_footstep_timer = _get_footstep_interval()
+
+		# Slightly randomise pitch so steps don't sound identical
+		_footstep_player.pitch_scale = randf_range(0.92, 1.08)
+
+		if footstep_sound != null:
+			_footstep_player.stream = footstep_sound
+			_footstep_player.play()
 
 func _reload_scene():
 	get_tree().reload_current_scene()

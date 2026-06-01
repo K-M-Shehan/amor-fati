@@ -15,11 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://bd1nh26h23qd2" path="res://scenes/environment/tree_5.tscn" id="8_ps2vj"]
 [ext_resource type="PackedScene" uid="uid://b0ljtl0rth6hk" path="res://scenes/environment/tree_6.tscn" id="9_sbmf2"]
 [ext_resource type="PackedScene" uid="uid://b8ddbudj0s52l" path="res://scenes/environment/iron_fence.tscn" id="10_1xax6"]
+[ext_resource type="Texture2D" uid="uid://cu2n436w8ryaw" path="res://textures/water.jpg" id="10_db1r7"]
 [ext_resource type="PackedScene" uid="uid://bir4jsxxx5rxf" path="res://scenes/environment/iron_fence_bar.tscn" id="11_g7tkf"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="11_nkeig"]
 [ext_resource type="PackedScene" uid="uid://cx3thlq4cskgo" path="res://scenes/environment/iron_fence_border_gate.tscn" id="12_4fww7"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="12_nfihu"]
+[ext_resource type="AudioStream" uid="uid://dna1cgdh8qvaj" path="res://assets/sound/footsteps-lvl1.wav" id="17_jrfo0"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="20_gvm5i"]
+[ext_resource type="PackedScene" uid="uid://cvl4jqitxl75p" path="res://scenes/levels/pause_menu.tscn" id="23_6gwlt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_plydf")
@@ -36,7 +39,9 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbmf2"]
-albedo_color = Color(0.2784314, 0.1882353, 1, 1)
+albedo_texture = ExtResource("10_db1r7")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1
@@ -80,9 +85,9 @@ size = Vector3(1, 20.640099, 59.26764)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall2" type="CSGBox3D" parent="Map" unique_id=1450383787]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.92915, 8.976337, -190.46864)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.917332, 8.976337, -190.46864)
 use_collision = true
-size = Vector3(1, 20.663008, 71.34042)
+size = Vector3(1, 20.663008, 71.36406)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="SideWallRight" type="CSGBox3D" parent="Map" unique_id=1773748055]
@@ -537,6 +542,7 @@ id = 16
 
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("5_dywbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28355408, 0.41608894, 24.26476)
+footstep_sound = ExtResource("17_jrfo0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)
@@ -557,7 +563,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, -98.055
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.72907)
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("7_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4341397, 0.52748716, -189.70084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4341397, 0.52748716, -190.02937)
 keys_needed = 2
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("8_8a7m2")]
@@ -567,5 +573,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4637191, 0.99176514, -152.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_gvm5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.239879, 8.427127, -190.50957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.239879, 8.427127, -190.71992)
 next_level = "res://scenes/levels/level2.tscn"
+
+[node name="PauseMenu" parent="." unique_id=290709426 instance=ExtResource("23_6gwlt")]

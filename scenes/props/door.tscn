@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dg8ursi4m8gsn"]
 
 [ext_resource type="Script" uid="uid://dyruk4q1t344w" path="res://scripts/props/door.gd" id="1_yepiq"]
+[ext_resource type="AudioStream" uid="uid://itlap7xj4eo8" path="res://assets/sound/effects/door_open.ogg" id="2_8dmq6"]
+[ext_resource type="AudioStream" uid="uid://clt8jb166v3ce" path="res://assets/sound/effects/door_close.ogg" id="3_lbmyp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5e0ln"]
 radius = 0.8779297
@@ -162,10 +164,14 @@ shadow_mesh = SubResource("ArrayMesh_2auvt")
 
 [node name="Door" type="Area3D" unique_id=1377055800]
 script = ExtResource("1_yepiq")
+sound_open = ExtResource("2_8dmq6")
+sound_close = ExtResource("3_lbmyp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1980084196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073271126, 0.9935113, 0.2280196)
 shape = SubResource("CapsuleShape3D_5e0ln")
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="." unique_id=799837874]
 
 [node name="Door" type="Node3D" parent="." unique_id=1835813075]
 
