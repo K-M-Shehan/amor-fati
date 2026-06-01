@@ -85,9 +85,9 @@ size = Vector3(1, 20.640099, 59.26764)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="FrontWall2" type="CSGBox3D" parent="Map" unique_id=1450383787]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.92915, 8.976337, -190.46864)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.917332, 8.976337, -190.46864)
 use_collision = true
-size = Vector3(1, 20.663008, 71.34042)
+size = Vector3(1, 20.663008, 71.36406)
 material = SubResource("StandardMaterial3D_nkeig")
 
 [node name="SideWallRight" type="CSGBox3D" parent="Map" unique_id=1773748055]
@@ -563,7 +563,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5489368, 0.7371171, -98.055
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.662085, 0.73711616, -105.72907)
 
 [node name="Door" parent="." unique_id=1377055800 instance=ExtResource("7_2r1tl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4341397, 0.52748716, -189.70084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4341397, 0.52748716, -190.02937)
 keys_needed = 2
 
 [node name="Key" parent="." unique_id=1009586310 instance=ExtResource("8_8a7m2")]
@@ -573,7 +573,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4637191, 0.99176514, -152.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.17383, 0.99176466, -72.013885)
 
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_gvm5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.239879, 8.427127, -190.50957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.239879, 8.427127, -190.71992)
 next_level = "res://scenes/levels/level2.tscn"
 
 [node name="PauseMenu" parent="." unique_id=290709426 instance=ExtResource("23_6gwlt")]
