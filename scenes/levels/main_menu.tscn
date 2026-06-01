@@ -13,6 +13,9 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_all2k"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn35j"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="MainMenu" type="Control" unique_id=116608454]
 layout_mode = 3
 anchors_preset = 15
@@ -53,12 +56,26 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
 text = "Start"
 
+[node name="ContinueButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=937315497]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_cn35j")
+text = "Continue"
+
 [node name="CreditsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1422211663]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
 text = "Credits"
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=666784947]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_all2k")
+text = "Options"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=179980343]
 layout_mode = 2
@@ -172,5 +189,7 @@ texture = ExtResource("8_k0nyb")
 expand_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

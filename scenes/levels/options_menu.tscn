@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://d0vi3cn1m6j0u"]
+
+[ext_resource type="Script" uid="uid://d2ysc7lvwrlxw" path="res://scripts/options_menu.gd" id="1_kbua8"]
+[ext_resource type="Texture2D" uid="uid://dr22lb8jkvcud" path="res://textures/title/a_title.png" id="2_w5mnl"]
+[ext_resource type="Texture2D" uid="uid://cbyspum6hmfgm" path="res://textures/title/m_title_filled.png" id="3_jlaoj"]
+[ext_resource type="Texture2D" uid="uid://b5t1cbbjth5w4" path="res://textures/title/o_title.png" id="4_iv4bk"]
+[ext_resource type="Texture2D" uid="uid://c6n0y3t3pad0a" path="res://textures/title/r_title.png" id="5_lw6hy"]
+[ext_resource type="Texture2D" uid="uid://crxcvee3h402f" path="res://textures/title/f2_title.png" id="6_2poou"]
+[ext_resource type="Texture2D" uid="uid://bcog735f7w8ch" path="res://textures/title/a2_title.png" id="7_f5v8b"]
+[ext_resource type="Texture2D" uid="uid://ralgd4qyvdn6" path="res://textures/title/t2_title.png" id="8_kch83"]
+[ext_resource type="Texture2D" uid="uid://bu4sqjwegr76r" path="res://textures/title/i_title.png" id="9_jrtjo"]
+
+[node name="OptionsMenu" type="Control" unique_id=116608454]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kbua8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1449198773]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1203021951]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1017605120]
+custom_minimum_size = Vector2(420, 0)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.591
+anchor_right = 0.5
+anchor_bottom = 0.591
+offset_left = -210.0
+offset_top = -98.96802
+offset_right = 210.0
+offset_bottom = 99.03198
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1545682791]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1933131457]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=2136040965]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Mouse Sensitivity"
+
+[node name="SensitivityValue" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=773426953]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 2
+
+[node name="SensitivitySlider" type="HSlider" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=886542804]
+custom_minimum_size = Vector2(280, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1777549083]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2" unique_id=2116754441]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Volume"
+
+[node name="VolumeValue" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2" unique_id=2030322569]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 2
+
+[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/HBoxContainer2" unique_id=355328757]
+custom_minimum_size = Vector2(280, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResetProgressButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1597390703]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Reset Progress"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1934348960]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Back"
+
+[node name="Letter1" type="TextureRect" parent="CanvasLayer" unique_id=1913535778]
+anchors_preset = -1
+anchor_left = 0.14500001
+anchor_top = 0.24400002
+anchor_right = 0.14500001
+anchor_bottom = 0.24400002
+offset_left = -40.04001
+offset_top = -40.112015
+offset_right = 39.95999
+offset_bottom = 39.887985
+texture = ExtResource("2_w5mnl")
+expand_mode = 2
+
+[node name="Letter2" type="TextureRect" parent="CanvasLayer" unique_id=1849728675]
+anchors_preset = -1
+anchor_left = 0.23500001
+anchor_top = 0.298
+anchor_right = 0.23500001
+anchor_bottom = 0.298
+offset_left = -39.72003
+offset_top = -40.104004
+offset_right = 40.27997
+offset_bottom = 39.895996
+texture = ExtResource("3_jlaoj")
+expand_mode = 2
+
+[node name="Letter3" type="TextureRect" parent="CanvasLayer" unique_id=1660612121]
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.259
+anchor_right = 0.326
+anchor_bottom = 0.259
+offset_left = -39.552002
+offset_top = -39.832
+offset_right = 40.447998
+offset_bottom = 40.168
+texture = ExtResource("4_iv4bk")
+expand_mode = 2
+
+[node name="Letter4" type="TextureRect" parent="CanvasLayer" unique_id=1945522126]
+anchors_preset = -1
+anchor_left = 0.42000002
+anchor_top = 0.22800002
+anchor_right = 0.42000002
+anchor_bottom = 0.22800002
+offset_left = -39.840027
+offset_top = -39.744003
+offset_right = 40.159973
+offset_bottom = 40.255997
+texture = ExtResource("5_lw6hy")
+expand_mode = 2
+
+[node name="Letter5" type="TextureRect" parent="CanvasLayer" unique_id=900994964]
+anchors_preset = -1
+anchor_left = 0.58500004
+anchor_top = 0.22700001
+anchor_right = 0.58500004
+anchor_bottom = 0.22700001
+offset_left = -39.920044
+offset_top = -40.09601
+offset_right = 40.079956
+offset_bottom = 39.90399
+texture = ExtResource("6_2poou")
+expand_mode = 2
+
+[node name="Letter6" type="TextureRect" parent="CanvasLayer" unique_id=812050140]
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.275
+anchor_right = 0.675
+anchor_bottom = 0.275
+offset_left = -39.600037
+offset_top = -40.199997
+offset_right = 40.399963
+offset_bottom = 39.800003
+texture = ExtResource("7_f5v8b")
+expand_mode = 2
+
+[node name="Letter7" type="TextureRect" parent="CanvasLayer" unique_id=676006707]
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_top = 0.19900002
+anchor_right = 0.77300006
+anchor_bottom = 0.19900002
+offset_left = -40.496094
+offset_top = -39.95201
+offset_right = 39.503906
+offset_bottom = 40.04799
+texture = ExtResource("8_kch83")
+expand_mode = 2
+
+[node name="Letter8" type="TextureRect" parent="CanvasLayer" unique_id=967808436]
+anchors_preset = -1
+anchor_left = 0.87000006
+anchor_top = 0.259
+anchor_right = 0.87000006
+anchor_bottom = 0.259
+offset_left = -40.24005
+offset_top = -39.832
+offset_right = 39.75995
+offset_bottom = 40.168
+texture = ExtResource("9_jrtjo")
+expand_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ResetProgressButton" to="." method="_on_reset_progress_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
