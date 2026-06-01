@@ -85,3 +85,5 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "Keys: 0"
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="." unique_id=189346454]

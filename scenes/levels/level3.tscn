@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cab1j3ypb3e2f" path="res://scenes/actors/player.tscn" id="13_flme0"]
 [ext_resource type="PackedScene" uid="uid://6uqu0s71wj2t" path="res://scenes/props/spike.tscn" id="14_0qxt0"]
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="15_lsxft"]
+[ext_resource type="AudioStream" uid="uid://dc4jrls32ow5m" path="res://assets/sound/footsteps-lvl2.wav" id="15_wo5bm"]
 [ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="16_rfqup"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="17_0y7c6"]
 [ext_resource type="PackedScene" uid="uid://e2nq1hssm87x" path="res://scenes/props/crate.tscn" id="18_wt4k6"]
@@ -433,6 +434,7 @@ id = 16
 
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("13_flme0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.49113, 0.41608894, 24.26476)
+footstep_sound = ExtResource("15_wo5bm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)

@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="11_nkeig"]
 [ext_resource type="PackedScene" uid="uid://cx3thlq4cskgo" path="res://scenes/environment/iron_fence_border_gate.tscn" id="12_4fww7"]
 [ext_resource type="PackedScene" uid="uid://cfhrdodgi7ed4" path="res://scenes/environment/tree2.tscn" id="12_nfihu"]
+[ext_resource type="AudioStream" uid="uid://dna1cgdh8qvaj" path="res://assets/sound/footsteps-lvl1.wav" id="17_jrfo0"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="20_gvm5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
@@ -540,6 +541,7 @@ id = 16
 
 [node name="Player" parent="." unique_id=1911212463 instance=ExtResource("5_dywbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28355408, 0.41608894, 24.26476)
+footstep_sound = ExtResource("17_jrfo0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1467349010]
 transform = Transform3D(0.9997626, -0.016408851, -0.014338214, 0.0217652, 0.72013646, 0.6934911, -0.0010539227, -0.6936385, 0.7203226, -1.2757597, 39.459763, -97.73019)
