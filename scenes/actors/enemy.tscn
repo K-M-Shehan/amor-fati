@@ -814,6 +814,7 @@ height = 4.0200195
 size = Vector3(10, 5, 10)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1058857341]
+process_mode = 1
 collision_layer = 2
 script = ExtResource("1_7p1mj")
 

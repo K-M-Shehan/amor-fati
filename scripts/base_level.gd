@@ -4,6 +4,7 @@ class_name BaseLevel
 @onready var builder = $Graph_builder
 @onready var player = $Player
 @onready var spotlight = $Player/Head/Camera3D/Spotlight
+@onready var _pause_menu = $PauseMenu
 var astar: AStarCustom
 var bfs: BFS
 var timer := 0.0
@@ -26,6 +27,8 @@ func _ready():
 	for e in get_tree().get_nodes_in_group("enemies"):
 		e.level_graph = builder.graph
 	_setup_visualizer()
+	# Make sure level processes correctly when paused
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _setup_visualizer() -> void:
 	if not enable_debug_visualizer:
@@ -92,6 +95,15 @@ func get_closest_node_id(pos: Vector3) -> int:
 # Overridden by levels that use barricades (e.g. level3.gd)
 func trigger_barricade(_world_pos: Vector3) -> void:
 	pass
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		if _pause_menu == null:
+			return
+		if get_tree().paused:
+			_pause_menu.close()
+		else:
+			_pause_menu.open()
 
 func _physics_process(delta):
 	timer += delta

@@ -41,8 +41,13 @@ func _unhandled_input(event):
 		%Camera3D.rotation_degrees.x = clamp(
 			%Camera3D.rotation_degrees.x, -80.0, 80.0
 		)
-	elif event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # mouse comes back when esc is pressed
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			# Only recapture if game is not paused
+			if not get_tree().paused:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	var SPEED = get_terrain_speed()

@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dso3lsotcpfjr" path="res://scenes/environment/pillar_4.tscn" id="21_m1gbu"]
 [ext_resource type="PackedScene" uid="uid://dlc3nhfy7unp5" path="res://scenes/environment/pillar_3.tscn" id="22_yw4fb"]
 [ext_resource type="PackedScene" uid="uid://bavm33kxcba3" path="res://scenes/environment/pillar_2.tscn" id="23_1wpw8"]
+[ext_resource type="PackedScene" uid="uid://cvl4jqitxl75p" path="res://scenes/levels/pause_menu.tscn" id="24_m1gbu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_tsmbm")
@@ -2480,3 +2481,5 @@ transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 85.1
 
 [node name="Pillar13" parent="." unique_id=202014006 instance=ExtResource("16_y3vdi")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 77.578316, 4.347692, -83.86963)
+
+[node name="PauseMenu" parent="." unique_id=290709426 instance=ExtResource("24_m1gbu")]

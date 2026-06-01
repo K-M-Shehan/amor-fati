@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dg8ursi4m8gsn" path="res://scenes/props/door.tscn" id="18_liaw4"]
 [ext_resource type="PackedScene" uid="uid://bovmm5xwlpydd" path="res://scenes/props/key.tscn" id="19_m0i7f"]
 [ext_resource type="PackedScene" uid="uid://ce8i5il47od7" path="res://scenes/levels/level_trigger.tscn" id="20_grqcv"]
+[ext_resource type="PackedScene" uid="uid://cvl4jqitxl75p" path="res://scenes/levels/pause_menu.tscn" id="21_bxuut"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntmo"]
 albedo_texture = ExtResource("2_sqrei")
@@ -830,3 +831,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.67436, 0.99176466, 22.264
 [node name="LevelTrigger" parent="." unique_id=666895116 instance=ExtResource("20_grqcv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.93018, 8.427127, -190.75664)
 next_level = "res://scenes/levels/level3.tscn"
+
+[node name="PauseMenu" parent="." unique_id=290709426 instance=ExtResource("21_bxuut")]

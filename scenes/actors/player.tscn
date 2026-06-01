@@ -9,6 +9,7 @@ height = 1.7519531
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cacbb"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1911212463]
+process_mode = 1
 script = ExtResource("1_15tap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1264690533]
