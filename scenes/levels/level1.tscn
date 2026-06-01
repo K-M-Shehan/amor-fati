@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bd1nh26h23qd2" path="res://scenes/environment/tree_5.tscn" id="8_ps2vj"]
 [ext_resource type="PackedScene" uid="uid://b0ljtl0rth6hk" path="res://scenes/environment/tree_6.tscn" id="9_sbmf2"]
 [ext_resource type="PackedScene" uid="uid://b8ddbudj0s52l" path="res://scenes/environment/iron_fence.tscn" id="10_1xax6"]
+[ext_resource type="Texture2D" uid="uid://cu2n436w8ryaw" path="res://textures/water.jpg" id="10_db1r7"]
 [ext_resource type="PackedScene" uid="uid://bir4jsxxx5rxf" path="res://scenes/environment/iron_fence_bar.tscn" id="11_g7tkf"]
 [ext_resource type="PackedScene" uid="uid://ilk5e525spg2" path="res://scenes/environment/tree1.tscn" id="11_nkeig"]
 [ext_resource type="PackedScene" uid="uid://cx3thlq4cskgo" path="res://scenes/environment/iron_fence_border_gate.tscn" id="12_4fww7"]
@@ -37,7 +38,9 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbmf2"]
-albedo_color = Color(0.2784314, 0.1882353, 1, 1)
+albedo_texture = ExtResource("10_db1r7")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1

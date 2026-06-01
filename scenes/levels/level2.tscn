@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://pn64yi3m8a6e" path="res://scenes/environment/tree_4.tscn" id="7_xidjn"]
 [ext_resource type="PackedScene" uid="uid://bd1nh26h23qd2" path="res://scenes/environment/tree_5.tscn" id="8_45jfw"]
 [ext_resource type="PackedScene" uid="uid://b0ljtl0rth6hk" path="res://scenes/environment/tree_6.tscn" id="9_8kpy5"]
+[ext_resource type="Texture2D" uid="uid://cu2n436w8ryaw" path="res://textures/water.jpg" id="10_b3p8y"]
+[ext_resource type="Texture2D" uid="uid://cek02lojd6fk7" path="res://textures/mud.jpg" id="11_bxuut"]
 [ext_resource type="PackedScene" uid="uid://ci7gxbbt7ag4j" path="res://scenes/graph_builder.tscn" id="13_6igki"]
 [ext_resource type="PackedScene" uid="uid://do4xoc2e2hhj8" path="res://scenes/actors/enemy.tscn" id="14_hlvfl"]
 [ext_resource type="AudioStream" uid="uid://dc4jrls32ow5m" path="res://assets/sound/footsteps-lvl2.wav" id="14_yhrca"]
@@ -34,10 +36,19 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbmf2"]
-albedo_color = Color(0.2784314, 0.1882353, 1, 1)
+albedo_texture = ExtResource("10_b3p8y")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g04qb"]
+albedo_texture = ExtResource("10_b3p8y")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqrei"]
-albedo_color = Color(0.4392157, 0.32941177, 0.24313726, 1)
+albedo_texture = ExtResource("11_bxuut")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="Environment" id="Environment_dywbp"]
 background_mode = 1
@@ -134,7 +145,7 @@ material = SubResource("StandardMaterial3D_sbmf2")
 [node name="WaterPatch2" type="CSGBox3D" parent="Map" unique_id=1116745735]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.39813, 0.013203859, -20.306759)
 size = Vector3(30.172443, 1, 34.269257)
-material = SubResource("StandardMaterial3D_sbmf2")
+material = SubResource("StandardMaterial3D_g04qb")
 
 [node name="MudPatch" type="CSGBox3D" parent="Map" unique_id=1272789217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.46375, 0.013203859, -111.63341)
@@ -163,7 +174,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.058895, 1, -85.0531)
 id = 10
 
-[node name="Waypoint" parent="Waypoints" unique_id=436533689 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
+[node name="Waypoint" parent="Waypoints" unique_id=1148992981 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.553925, 1, -85.0531)
 
 [node name="Waypoint12" parent="Waypoints" unique_id=1306283300 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
@@ -726,25 +737,25 @@ tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint153" parent="Waypoints" unique_id=1171733079 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.372139, 1, -129.71143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.856815, 1, -134.32971)
 id = 31
 tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint154" parent="Waypoints" unique_id=1611490609 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.372139, 1, -148.87988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.032562, 1, -145.43286)
 id = 34
 tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint155" parent="Waypoints" unique_id=304097579 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.240425, 1, -148.87988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.240425, 1, -145.63643)
 id = 39
 tile_type = 2
 movement_penalty = 10.0
 
 [node name="Waypoint167" parent="Waypoints" unique_id=192288624 groups=["waypoints"] instance=ExtResource("15_7r2ys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.888252, 1, -129.30063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.888252, 1, -135.13559)
 id = 14
 tile_type = 2
 movement_penalty = 10.0
